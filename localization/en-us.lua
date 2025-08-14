@@ -11,10 +11,9 @@ return {
             artb_plus_tag = "+1 Tag",
             artb_wood = "Wood!",
             artb_wild = "Wild",
-            artb_hungry = "Hungry",
-            artb_fed = "Fed",
-            artb_starved = "Starved :(",
-            artb_menu = "Enable Custom Menu",
+            artb_hungry="Hungry",
+            artb_fed="Fed",
+            artb_starved="Starved :(",
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -68,11 +67,11 @@ return {
                     "{C:clubs}Club{} suit give",
                     "{C:mult}+#2#{} Mult when scored",
                 },
-                    {
-                        "Played cards with",
-                        "{C:spades}Spade{} suit give",
-                        "{C:chips}+#1#{} Chips when scored",
-                    } }
+                {
+                    "Played cards with",
+                    "{C:spades}Spade{} suit give",
+                    "{C:chips}+#1#{} Chips when scored",
+                } }
             },
 
             j_artb_clawmachine = {
@@ -157,11 +156,11 @@ return {
                     "in the same hand,",
                     "destroy all {C:attention}9{}s",
                 },
-                    {
-                        "Scored {C:attention}7{}s give {C:mult}+#2#{} Mult for",
-                        "each {C:attention}9{} destroyed by this card",
-                        "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
-                    } }
+                {
+                    "Scored {C:attention}7{}s give {C:mult}+#2#{} Mult for",
+                    "each {C:attention}9{} destroyed by this card",
+                    "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
+                } }
             },
 
             j_artb_collector = {
@@ -172,12 +171,12 @@ return {
                     "to a {C:attention}Joker{} or {C:attention}Consumable{}",
                     "to the right",
                 },
-                    {
-                        "Gives {X:mult,C:white}X#1#{} Mult times",
-                        "total {C:attention}sell value{} of all owned",
-                        "{C:attention}Jokers{} and {C:attention}Consumables{}",
-                        "{C:inactive}(Currently: {X:mult,C:white}X#2#{} {C:inactive}Mult)"
-                    } }
+                {
+                    "Gives {X:mult,C:white}X#1#{} Mult times",
+                    "total {C:attention}sell value{} of all owned",
+                    "{C:attention}Jokers{} and {C:attention}Consumables{}",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{} {C:inactive}Mult)"
+                } }
             },
 
             j_artb_origami = {
@@ -218,11 +217,11 @@ return {
                     "has one {C:attention}stacks{} them",
                     "{C:inactive}(Up to {C:attention}3{} {C:inactive}Seals stacked){}",
                 },
-                    {
-                        "Adds a {C:attention}Brick Seal Collectable{}",
-                        "when this Joker is obtained",
-                        "{C:inactive}(Must have room){}"
-                    } }
+                {
+                    "Adds a {C:attention}Brick Seal Collectable{}",
+                    "when this Joker is obtained",
+                    "{C:inactive}(Must have room){}"
+                } }
             },
 
             j_artb_ascii = {
@@ -231,7 +230,7 @@ return {
                     "Each card in hand gives",
                     "{C:mult}+#1#{} Mult for its and every",
                     "unique rank to the left"
-                } }
+                }}
             },
 
             j_artb_gold_plating = {
@@ -244,6 +243,15 @@ return {
                     "Sell this Joker",
                     "to give its {C:attention}sell value{}",
                     "to a Joker to the right"
+                }}
+            },
+
+            j_artb_stained_glass = {
+                name = 'Stained Glass',
+                text = {{
+                    "{C:attention}Glass Cards{} create an",
+                    "{C:attention}Art card{} when scored, and a",
+                    "{C:attention}Creative Tag{} when shattered"
                 }}
             }
 
