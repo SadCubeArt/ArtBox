@@ -280,6 +280,10 @@ ArtBox.Collectables = {
     ['m_ortalab_sand'] = { atlas = 'artb_collectable_atlas', pos = { x = 2, y = 10 }, soul_pos = { x = 2, y = 11 }},
     ['m_ortalab_iou'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 10 }, soul_pos = { x = 3, y = 11 }},
     ['m_ortalab_ore'] = { atlas = 'artb_collectable_atlas', pos = { x = 4, y = 10 }, soul_pos = { x = 4, y = 11 }},
+
+    ['m_bunc_cracker'] = { atlas = 'artb_collectable_atlas', pos = { x = 9, y = 10 }, soul_pos = { x = 9, y = 11 }},
+    ['m_bunc_copper'] = { atlas = 'artb_collectable_atlas', pos = { x = 0, y = 12 }, soul_pos = { x = 0, y = 13 }},
+    
     --Editions
     ['e_polychrome'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'polychrome', },
     ['e_foil'] = { atlas = 'artb_collectable_atlas', pos = { x = 6, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'foil', },
@@ -290,6 +294,9 @@ ArtBox.Collectables = {
     ['e_ortalab_fluorescent'] = { atlas = 'artb_collectable_atlas', pos = { x = 6, y = 10 }, soul_pos = { x = 6, y = 11 }, shader = 'ortalab_fluorescent', },
     ['e_ortalab_anaglyphic'] = { atlas = 'artb_collectable_atlas', pos = { x = 7, y = 10 }, soul_pos = { x = 7, y = 11 }, shader = 'ortalab_anaglyphic', },
     ['e_ortalab_overexposed'] = { atlas = 'artb_collectable_atlas', pos = { x = 8, y = 10 }, soul_pos = { x = 8, y = 11 }, shader = 'ortalab_overexposed', },
+
+    ['e_bunc_glitter'] = { atlas = 'artb_collectable_atlas', pos = { x = 2, y = 12 }, soul_pos = { x = 2, y = 13 }, shader = 'bunc_glitter', },
+    ['e_bunc_fluorescent'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 12 }, soul_pos = { x = 3, y = 13 }, shader = 'bunc_fluorescent', },
 }
 
 function ArtBox.add_collectible(key, args)
