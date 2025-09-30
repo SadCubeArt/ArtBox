@@ -14,11 +14,19 @@ return {
             artb_hungry="Hungry",
             artb_fed="Fed",
             artb_starved="Starved :(",
+            artb_protoplanet="Protoplanet",
+            artb_stolen="Stolen!"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
             artb_brick_seal = "Brick Seal",
             artb_button_seal = "Button Seal",
+        },
+        poker_hand_descriptions={
+            ["artb_null"] = {'5 Rankless Cards'},
+        },
+        poker_hands={
+            ["artb_null"] = "Null",
         },
     },
     descriptions = {
@@ -253,6 +261,28 @@ return {
                     "{C:attention}Art card{} when scored, and a",
                     "{C:attention}Creative Tag{} when shattered"
                 }}
+            },
+
+            j_artb_paint_chips = {
+                name = 'Paint Chips',
+                text = {{
+                    "{X:chips,C:white}X#2#{} Chips",
+                    "{X:mult,C:white}X#1#{} Mult",
+                }}
+            },
+
+            j_artb_heist = {
+                name = 'Heist',
+                text = {{
+                    "When {C:attention}Blind{} is selected,",
+                    "steals {C:attention}sell value{} of",
+                    "the Joker to the right"
+                },
+                {
+                    "gives Mult equal to three",
+                    "times this Jokers {C:attention}sell value{}",
+                    "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
+                }}
             }
 
 
@@ -295,6 +325,27 @@ return {
                     "{C:attention}1{} selected playing card",
                 }
             },
+            c_artb_gros_michel_collectable = {
+                name = 'Gros Michel Collectable',
+                text = {
+                    "{C:mult}+#1#{} Mult",
+                    "If you already have",
+                    "a {C:attention}Gros Michel Collectable{}",
+                    "destroys this and gives",
+                    "the other one {C:mult}+#2#{} Mult"
+                }
+            },
+            c_artb_cavendish_collectable = {
+                name = 'Cavendish Collectable',
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult",
+                    "If you already have",
+                    "a {C:attention}Cavendish Collectable{}",
+                    "destroys this and gives",
+                    "the other one {X:mult,C:white}X#2#{} Mult"
+                }
+            },
+
         },
         Tag = {
             tag_artb_creative = {
@@ -422,6 +473,17 @@ return {
                     "selected playing card to",
                     "{C:attention}Marble Card{}",
                 }
+            },
+        },
+        Planet={
+            c_artb_vesta={
+                name="Vesta",
+                text={
+                    "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+                    "{C:attention}Null",
+                    "{C:mult}+3{} Mult and",
+                    "{C:chips}+40{} chips",
+                },
             },
         },
         Spectral = {

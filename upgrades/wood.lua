@@ -5,7 +5,7 @@ SMODS.Enhancement({
     discovered = true,
     config = {
     extra = {
-      chips=2
+      chips=3
     }
   },
 
