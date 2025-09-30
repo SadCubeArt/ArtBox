@@ -15,7 +15,8 @@ return {
             artb_fed="Fed",
             artb_starved="Starved :(",
             artb_protoplanet="Protoplanet",
-            artb_stolen="Stolen!"
+            artb_stolen="Stolen!",
+            artb_null_hand_toggle = "Toggle Null Hand detection"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",

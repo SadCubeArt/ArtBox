@@ -1,4 +1,5 @@
 return {
     collectable_shine = false,
-    menu = true
+    menu = true,
+    null_hand = true
 }
