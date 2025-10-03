@@ -14,7 +14,7 @@ SMODS.Joker {
     info_queue[#info_queue + 1] = G.P_SEALS['artb_brick']
   end,
 
-  add_to_deck = function(self, card, from_debuff)
+  add_to_deck = function(self, card)
     if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
       G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
       G.E_MANAGER:add_event(Event({

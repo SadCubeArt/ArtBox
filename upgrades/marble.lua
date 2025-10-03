@@ -31,7 +31,7 @@ SMODS.Enhancement({
           card.ability.extra.progress = card.ability.extra.progress + 1
           card:juice_up()
 
-          if card.ability.extra.progress == 4 then
+          if card.ability.extra.progress >= 4 then
             card.ability.x_chips = 2
           end
           return true
@@ -42,7 +42,12 @@ SMODS.Enhancement({
 
   draw = function(self, card, layer)
     if (layer == 'card' or layer == 'both') then
-      card.children.center:set_sprite_pos({ x = card.ability.extra.progress, y = 1 })
+      if card.ability.extra.progress < 4 then
+        card.children.center:set_sprite_pos({ x = card.ability.extra.progress, y = 1 })
+      else
+        card.children.center:set_sprite_pos({ x = 4, y = 1 })
+      end
+      
     end
   end
 })

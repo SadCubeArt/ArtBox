@@ -16,7 +16,8 @@ return {
             artb_starved="Starved :(",
             artb_protoplanet="Protoplanet",
             artb_stolen="Stolen!",
-            artb_null_hand_toggle = "Toggle Null Hand detection"
+            artb_null_hand_toggle = "Toggle Null Hand",
+            artb_menu = "Toggle Custom Menu"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -284,7 +285,17 @@ return {
                     "times this Jokers {C:attention}sell value{}",
                     "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
                 }}
-            }
+            },
+
+            j_artb_null_pointer = {
+                name = 'Null Pointer',
+                text = {{
+                    "Fills all empty consumable",
+                    "slots with random rankless",
+                    "{C:attention}Collectable enhancements{}",
+                    "when {C:attention}obtained{} or {C:attention}sold{}"
+                }}
+            },
 
 
         },
@@ -454,7 +465,7 @@ return {
                     'playing card and',
                     'creates Collectables of its',
                     '{C:attention}Edition{}, {C:attention}Seal{} and {C:attention}Enhancement{}',
-                    '{C:inactive}(Must have room)'
+                    '{C:inactive}(Must have room){}'
                 }
             },
 
@@ -475,6 +486,16 @@ return {
                     "{C:attention}Marble Card{}",
                 }
             },
+
+            c_artb_art_still_life = {
+                name = 'Still Life',
+                text = {
+                    "creates a",
+                    "{C:attention}Gros Michel Collectable{}",
+                    "{C:inactive}(Must have room, or another{}",
+                    "{C:inactive}Gros Michel Collectable already){}"
+                }
+            }
         },
         Planet={
             c_artb_vesta={
