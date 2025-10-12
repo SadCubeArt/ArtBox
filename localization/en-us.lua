@@ -17,7 +17,9 @@ return {
             artb_protoplanet="Protoplanet",
             artb_stolen="Stolen!",
             artb_null_hand_toggle = "Toggle Null Hand",
-            artb_menu = "Toggle Custom Menu"
+            artb_menu = "Toggle Custom Menu",
+            artb_fill= "Fill!",
+            artb_empty= "Empty"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -296,6 +298,35 @@ return {
                     "when {C:attention}obtained{} or {C:attention}sold{}"
                 }}
             },
+
+            j_artb_card_binder = {
+                name = 'Card Binder',
+                text = {{
+                    "{C:attention}+#1#{} hand size when",
+                    "not in a {C:attention}Blind{}"
+                }}
+            },
+
+            j_artb_paint_bucket = {
+                name = 'Paint Bucket',
+                text = {{
+                    "For the next {C:attention}#1#{} hands",
+                    "give one random {C:attention}Enhancement{}",
+                    "to all scored cards with same",
+                    "{C:attention}Rank{} as first scoring card"
+                }}
+            },
+
+            j_artb_sparkledog = {
+                name = 'Sparkledog',
+                text = {{
+                    "{C:chips}#1#{} Chips for each",
+                    "unique {C:attention}enhancement{}, {C:attention}seal{}",
+                    "and {C:attention}edition{} in {C:attention}full deck{}",
+                    "{C:inactive}(Currently: {C:chips}#2#{} {C:inactive}Chips)"
+                }}
+            },
+
 
 
         },

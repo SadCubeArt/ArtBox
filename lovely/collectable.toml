@@ -13,7 +13,7 @@ if card.ability.consumeable then
 '''
 position = "after"
 payload = '''
-    if card.config.center.key == 'c_artb_joker_collectable' or card.config.center.key == 'c_artb_limited_edition_collectable' then
+    if card.config.center.key == 'c_artb_joker_collectable' or card.config.center.key == 'c_artb_limited_edition_collectable' or card.config.center.key == 'c_artb_gros_michel_collectable' or card.config.center.key == 'c_artb_cavendish_collectable' then
         return {
         n=G.UIT.ROOT, config = {padding = 0, colour = G.C.CLEAR}, nodes={
             {n=G.UIT.C, config={padding = 0.15, align = 'cl'}, nodes={
