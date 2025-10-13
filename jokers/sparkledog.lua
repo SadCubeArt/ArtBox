@@ -2,7 +2,7 @@ SMODS.Joker {
     key = "sparkledog",
     config = {
       extra = {
-        chips_added=10
+        chips_added=12
       }
     },
     rarity = 1,
@@ -49,7 +49,7 @@ SMODS.Joker {
           end
 
           if v.edition then
-            ArtBox.add_modifier_to_list(modifiers, v.edition)
+            ArtBox.add_modifier_to_list(modifiers, v.edition.key)
           end
 
         end

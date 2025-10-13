@@ -252,7 +252,7 @@ SMODS.ConsumableType({
             text = { 'Find this card in an unseeded', 'run to find out what it does' }
         }
     },
-    collection_rows = { 4, 4, 4 },
+    collection_rows = { 2,3 },
     shop_rate = 0,
     default = 'c_artb_joker_collectable'
 })
@@ -424,7 +424,7 @@ SMODS.ConsumableType({
             text = { 'Find this card in an unseeded', 'run to find out what it does' }
         }
     },
-    collection_rows = { 4, 4, 4 },
+    collection_rows = { 5,5 },
     shop_rate = 0,
     default = 'c_artb_art_paper'
 })

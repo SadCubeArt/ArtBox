@@ -518,6 +518,15 @@ return {
                 }
             },
 
+            c_artb_art_mystery_box = {
+                name = 'Mystery Box',
+                text = {
+                    "Fills all empty consumable",
+                    "slots with random",
+                    "{C:attention}Modifier Collectables{}",
+                }
+            },
+
             c_artb_art_still_life = {
                 name = 'Still Life',
                 text = {
