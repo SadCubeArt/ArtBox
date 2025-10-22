@@ -19,7 +19,8 @@ return {
             artb_null_hand_toggle = "Toggle Null Hand",
             artb_menu = "Toggle Custom Menu",
             artb_fill= "Fill!",
-            artb_empty= "Empty"
+            artb_empty= "Empty",
+            artb_fired= "Fired"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -592,9 +593,20 @@ return {
                 name = 'Marble Card',
                 text = {
                     "No rank or suit,",
-                    "Gives {X:chips,C:white}X2{} Chips",
                     "after being played {C:attention}4{} times",
+                    "Gives {X:chips,C:white}X2{} Chips and is",
+                    "considered a {C:attention}face{} card",
                     "{C:inactive}(#2#/4){}"
+                }
+            },
+
+            m_artb_clay = {
+                name = 'Clay Card',
+                text = {
+                    "{C:mult}+#1#{} permanent Mult when drawn,",
+                    "first time this card is held in hand",
+                    "when score {C:attention}catches fire{} loses abilities",
+                    "and {C:attention}doubles{} permanent Mult",
                 }
             },
         },

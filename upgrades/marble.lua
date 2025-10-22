@@ -51,3 +51,15 @@ SMODS.Enhancement({
     end
   end
 })
+
+local card_isfaceref = Card.is_face
+
+function Card:is_face(from_boss)
+    if self.debuff and not from_boss then return end
+	
+	if self.config.center == G.P_CENTERS.m_artb_marble and self.ability.extra.progress >= 4 then
+		return true
+	end
+	
+	return card_isfaceref(self, from_boss)
+end
