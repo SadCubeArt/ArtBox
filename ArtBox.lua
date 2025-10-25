@@ -19,14 +19,14 @@ Game.main_menu = function(change_context)
     if ArtBox_config.menu then
         -- adds a Blend to the main menu
         local newcard = Card(
-			G.title_top.T.x,
-			G.title_top.T.y,
-			G.CARD_W,
-			G.CARD_H,
-			G.P_CARDS.empty,
-			G.P_CENTERS['c_artb_art_blend'],
-			{ bypass_discovery_center = true }
-		)
+            G.title_top.T.x,
+            G.title_top.T.y,
+            G.CARD_W,
+            G.CARD_H,
+            G.P_CARDS.empty,
+            G.P_CENTERS['c_artb_art_blend'],
+            { bypass_discovery_center = true }
+        )
 
         -- recenter the title
         G.title_top.T.w = G.title_top.T.w * 1.7675
@@ -37,13 +37,13 @@ Game.main_menu = function(change_context)
         newcard.T.w = newcard.T.w * 1.1 * 1.2
         newcard.T.h = newcard.T.h * 1.1 * 1.2
         newcard.no_ui = true
-		newcard.states.visible = false
+        newcard.states.visible = false
 
         -- make the title screen use different background colors
         G.SPLASH_BACK:define_draw_steps({ {
             shader = 'splash',
             send = {
-                { name = 'time',       ref_table = G.TIMERS,  ref_value = 'REAL_SHADER' },
+                { name = 'time',       ref_table = G.TIMERS, ref_value = 'REAL_SHADER' },
                 { name = 'vort_speed', val = 0.4 },
                 { name = 'colour_1',   ref_table = ArtBox.C, ref_value = 'ARTB_PRIMARY' },
                 { name = 'colour_2',   ref_table = ArtBox.C, ref_value = 'ARTB_SECONDARY' },
@@ -51,22 +51,22 @@ Game.main_menu = function(change_context)
         } })
 
         -- materialize blend card
-		G.E_MANAGER:add_event(Event({
-			trigger = "after",
-			delay = 0,
-			blockable = false,
-			blocking = false,
-			func = function()
-				if change_context == "splash" then
-					newcard.states.visible = true
-					newcard:start_materialize({ G.C.WHITE, ArtBox.C.ARTB_SECONDARY }, true, 2.5)
-				else
-					newcard.states.visible = true
-					newcard:start_materialize({ G.C.WHITE, ArtBox.C.ARTB_SECONDARY }, nil, 1.2)
-				end
-				return true
-			end,
-		}))
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0,
+            blockable = false,
+            blocking = false,
+            func = function()
+                if change_context == "splash" then
+                    newcard.states.visible = true
+                    newcard:start_materialize({ G.C.WHITE, ArtBox.C.ARTB_SECONDARY }, true, 2.5)
+                else
+                    newcard.states.visible = true
+                    newcard:start_materialize({ G.C.WHITE, ArtBox.C.ARTB_SECONDARY }, nil, 1.2)
+                end
+                return true
+            end,
+        }))
     end
 
     return ret
@@ -160,7 +160,7 @@ ArtBox.config_tab = function()
         n = G.UIT.ROOT,
         config = { align = "m", r = 0.1, padding = 0.1, colour = G.C.BLACK, minw = 8, minh = 6 },
         nodes = {
-            { n = G.UIT.R, config = { align = "cl", padding = 0, minh = 0.1 },      nodes = {} },
+            { n = G.UIT.R, config = { align = "cl", padding = 0, minh = 0.1 }, nodes = {} },
 
             -- Collectible Shine Toggle
             {
@@ -252,7 +252,7 @@ SMODS.ConsumableType({
             text = { 'Find this card in an unseeded', 'run to find out what it does' }
         }
     },
-    collection_rows = { 2,3 },
+    collection_rows = { 2, 3 },
     shop_rate = 0,
     default = 'c_artb_joker_collectable'
 })
@@ -271,10 +271,10 @@ ArtBox.Collectables = {
     ['gb_fortune'] = { atlas = 'artb_collectable_atlas', pos = { x = 0, y = 8 }, soul_pos = { x = 0, y = 9 } },
     ['gb_infinite'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 8 }, soul_pos = { x = 1, y = 9 } },
 
-    ['aij_smiley'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 0 }, soul_pos = { x = 6, y = 1 }},
-    ['aij_melted'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 0 }, soul_pos = { x = 7, y = 1 }},
+    ['aij_smiley'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 0 }, soul_pos = { x = 6, y = 1 } },
+    ['aij_melted'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 0 }, soul_pos = { x = 7, y = 1 } },
 
-    ['akyrs_carmine'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 4 }, soul_pos = { x = 5, y = 5 }},
+    ['akyrs_carmine'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 4 }, soul_pos = { x = 5, y = 5 } },
 
     --Enhancements
     ['m_bonus'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 0 }, soul_pos = { x = 1, y = 1 } },
@@ -289,6 +289,7 @@ ArtBox.Collectables = {
     ['m_artb_wood'] = { atlas = 'artb_collectable_atlas', pos = { x = 9, y = 2 }, soul_pos = { x = 9, y = 3 } },
     ['m_artb_stained'] = { atlas = 'artb_collectable_atlas', pos = { x = 8, y = 2 }, soul_pos = { x = 8, y = 3 } },
     ['m_artb_marble'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 6 }, soul_pos = { x = 1, y = 7 } },
+    ['m_artb_clay'] = { atlas = 'artb_collectable_atlas', pos = { x = 5, y = 12 }, soul_pos = { x = 5, y = 13 } },
 
     ['m_paperback_bandaged'] = { atlas = 'artb_collectable_atlas', pos = { x = 5, y = 4 }, soul_pos = { x = 5, y = 5 } },
     ['m_paperback_soaked'] = { atlas = 'artb_collectable_atlas', pos = { x = 6, y = 4 }, soul_pos = { x = 6, y = 5 } },
@@ -306,40 +307,40 @@ ArtBox.Collectables = {
     ['m_gb_wooden'] = { atlas = 'artb_collectable_atlas', pos = { x = 7, y = 6 }, soul_pos = { x = 7, y = 7 } },
     ['m_gb_honey'] = { atlas = 'artb_collectable_atlas', pos = { x = 8, y = 6 }, soul_pos = { x = 8, y = 7 } },
 
-    ['m_ortalab_recycled'] = { atlas = 'artb_collectable_atlas', pos = { x = 7, y = 8 }, soul_pos = { x = 7, y = 9 }},
-    ['m_ortalab_rusty'] = { atlas = 'artb_collectable_atlas', pos = { x = 8, y = 8 }, soul_pos = { x = 8, y = 9 }},
-    ['m_ortalab_index'] = { atlas = 'artb_collectable_atlas', pos = { x = 9, y = 8 }, soul_pos = { x = 9, y = 9 }},
-    ['m_ortalab_post'] = { atlas = 'artb_collectable_atlas', pos = { x = 0, y = 10 }, soul_pos = { x = 0, y = 11 }},
-    ['m_ortalab_bent'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 10 }, soul_pos = { x = 1, y = 11 }},
-    ['m_ortalab_sand'] = { atlas = 'artb_collectable_atlas', pos = { x = 2, y = 10 }, soul_pos = { x = 2, y = 11 }},
-    ['m_ortalab_iou'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 10 }, soul_pos = { x = 3, y = 11 }},
-    ['m_ortalab_ore'] = { atlas = 'artb_collectable_atlas', pos = { x = 4, y = 10 }, soul_pos = { x = 4, y = 11 }},
+    ['m_ortalab_recycled'] = { atlas = 'artb_collectable_atlas', pos = { x = 7, y = 8 }, soul_pos = { x = 7, y = 9 } },
+    ['m_ortalab_rusty'] = { atlas = 'artb_collectable_atlas', pos = { x = 8, y = 8 }, soul_pos = { x = 8, y = 9 } },
+    ['m_ortalab_index'] = { atlas = 'artb_collectable_atlas', pos = { x = 9, y = 8 }, soul_pos = { x = 9, y = 9 } },
+    ['m_ortalab_post'] = { atlas = 'artb_collectable_atlas', pos = { x = 0, y = 10 }, soul_pos = { x = 0, y = 11 } },
+    ['m_ortalab_bent'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 10 }, soul_pos = { x = 1, y = 11 } },
+    ['m_ortalab_sand'] = { atlas = 'artb_collectable_atlas', pos = { x = 2, y = 10 }, soul_pos = { x = 2, y = 11 } },
+    ['m_ortalab_iou'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 10 }, soul_pos = { x = 3, y = 11 } },
+    ['m_ortalab_ore'] = { atlas = 'artb_collectable_atlas', pos = { x = 4, y = 10 }, soul_pos = { x = 4, y = 11 } },
 
-    ['m_bunc_cracker'] = { atlas = 'artb_collectable_atlas', pos = { x = 9, y = 10 }, soul_pos = { x = 9, y = 11 }},
-    ['m_bunc_copper'] = { atlas = 'artb_collectable_atlas', pos = { x = 0, y = 12 }, soul_pos = { x = 0, y = 13 }},
+    ['m_bunc_cracker'] = { atlas = 'artb_collectable_atlas', pos = { x = 9, y = 10 }, soul_pos = { x = 9, y = 11 } },
+    ['m_bunc_copper'] = { atlas = 'artb_collectable_atlas', pos = { x = 0, y = 12 }, soul_pos = { x = 0, y = 13 } },
 
-    ['m_aij_fervent'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 0 }, soul_pos = { x = 0, y = 1 }},
-    ['m_aij_charged'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 0 }, soul_pos = { x = 1, y = 1 }},
-    ['m_aij_ice'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 0 }, soul_pos = { x = 2, y = 1 }},
-    ['m_aij_wood'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 0 }, soul_pos = { x = 3, y = 1 }},
-    ['m_aij_canvas'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 0 }, soul_pos = { x = 4, y = 1 }},
-    ['m_aij_simulated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 0 }, soul_pos = { x = 5, y = 1 }},
+    ['m_aij_fervent'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 0 }, soul_pos = { x = 0, y = 1 } },
+    ['m_aij_charged'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 0 }, soul_pos = { x = 1, y = 1 } },
+    ['m_aij_ice'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 0 }, soul_pos = { x = 2, y = 1 } },
+    ['m_aij_wood'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 0 }, soul_pos = { x = 3, y = 1 } },
+    ['m_aij_canvas'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 0 }, soul_pos = { x = 4, y = 1 } },
+    ['m_aij_simulated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 0 }, soul_pos = { x = 5, y = 1 } },
 
-    ['m_buf_porcelain'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 2 }, soul_pos = { x = 2, y = 3 }},
-    ['m_buf_porcelain_g'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 }},
+    ['m_buf_porcelain'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 2 }, soul_pos = { x = 2, y = 3 } },
+    ['m_buf_porcelain_g'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 } },
 
-    ['m_akyrs_scoreless'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 2 }, soul_pos = { x = 4, y = 3 }},
-    ['m_akyrs_brick_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 2 }, soul_pos = { x = 5, y = 3 }},
-    ['m_akyrs_ash_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 2 }, soul_pos = { x = 6, y = 3 }},
-    ['m_akyrs_hatena'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 2 }, soul_pos = { x = 7, y = 3 }},
-    ['m_akyrs_item_box'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 2 }, soul_pos = { x = 8, y = 3 }},
-    ['m_akyrs_insolate_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 2 }, soul_pos = { x = 9, y = 3 }},
-    ['m_akyrs_canopy_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 4 }, soul_pos = { x = 0, y = 5 }},
-    ['m_akyrs_thai_tea_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 4 }, soul_pos = { x = 1, y = 5 }},
-    ['m_akyrs_matcha_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 4 }, soul_pos = { x = 2, y = 5 }},
-    ['m_akyrs_earl_grey_tea_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 4 }, soul_pos = { x = 3, y = 5 }},
-    ['m_akyrs_zap_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 4 }, soul_pos = { x = 4, y = 5 }},
-    
+    ['m_akyrs_scoreless'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 2 }, soul_pos = { x = 4, y = 3 } },
+    ['m_akyrs_brick_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 2 }, soul_pos = { x = 5, y = 3 } },
+    ['m_akyrs_ash_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 2 }, soul_pos = { x = 6, y = 3 } },
+    ['m_akyrs_hatena'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 2 }, soul_pos = { x = 7, y = 3 } },
+    ['m_akyrs_item_box'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 2 }, soul_pos = { x = 8, y = 3 } },
+    ['m_akyrs_insolate_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 2 }, soul_pos = { x = 9, y = 3 } },
+    ['m_akyrs_canopy_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 4 }, soul_pos = { x = 0, y = 5 } },
+    ['m_akyrs_thai_tea_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 4 }, soul_pos = { x = 1, y = 5 } },
+    ['m_akyrs_matcha_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 4 }, soul_pos = { x = 2, y = 5 } },
+    ['m_akyrs_earl_grey_tea_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 4 }, soul_pos = { x = 3, y = 5 } },
+    ['m_akyrs_zap_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 4 }, soul_pos = { x = 4, y = 5 } },
+
     --Editions
     ['e_polychrome'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'polychrome', },
     ['e_foil'] = { atlas = 'artb_collectable_atlas', pos = { x = 6, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'foil', },
@@ -354,15 +355,15 @@ ArtBox.Collectables = {
     ['e_bunc_glitter'] = { atlas = 'artb_collectable_atlas', pos = { x = 2, y = 12 }, soul_pos = { x = 2, y = 13 }, shader = 'bunc_glitter', },
     ['e_bunc_fluorescent'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 12 }, soul_pos = { x = 3, y = 13 }, shader = 'bunc_fluorescent', },
 
-    ['e_aij_glimmer'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 0 }, soul_pos = { x = 8, y = 1 }, shader = 'aij_glimmer',},
-    ['e_aij_silver'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 0 }, soul_pos = { x = 9, y = 1 }, shader = 'aij_silver',},
-    ['e_aij_stellar'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 2 }, soul_pos = { x = 0, y = 3 }, shader = 'aij_stellar',},
-    ['e_aij_aureate'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 2 }, soul_pos = { x = 1, y = 3 }, shader = 'aij_aureate',},
+    ['e_aij_glimmer'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 0 }, soul_pos = { x = 8, y = 1 }, shader = 'aij_glimmer', },
+    ['e_aij_silver'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 0 }, soul_pos = { x = 9, y = 1 }, shader = 'aij_silver', },
+    ['e_aij_stellar'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 2 }, soul_pos = { x = 0, y = 3 }, shader = 'aij_stellar', },
+    ['e_aij_aureate'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 2 }, soul_pos = { x = 1, y = 3 }, shader = 'aij_aureate', },
 
-    ['e_akyrs_texelated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 4 }, soul_pos = { x = 6, y = 5 }, shader = 'akyrs_texelated',},
-    ['e_akyrs_noire'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 4 }, soul_pos = { x = 7, y = 5 }, shader = 'akyrs_noire',},
-    ['e_akyrs_sliced'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 4 }, soul_pos = { x = 8, y = 5 }},
-    ['e_akyrs_burnt'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 4 }, soul_pos = { x = 9, y = 5 }},
+    ['e_akyrs_texelated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 4 }, soul_pos = { x = 6, y = 5 }, shader = 'akyrs_texelated', },
+    ['e_akyrs_noire'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 4 }, soul_pos = { x = 7, y = 5 }, shader = 'akyrs_noire', },
+    ['e_akyrs_sliced'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 4 }, soul_pos = { x = 8, y = 5 } },
+    ['e_akyrs_burnt'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 4 }, soul_pos = { x = 9, y = 5 } },
 }
 
 function ArtBox.add_collectible(key, args)
@@ -373,7 +374,6 @@ function ArtBox.add_collectible(key, args)
         sendWarnMessage('A Collectable type ' .. key .. ' could not properly be loaded', 'ArtBox')
     end
 end
-    
 
 function ArtBox.create_collectable(key)
     local collectable = SMODS.add_card({ key = 'c_artb_mod_collectable' })
@@ -395,7 +395,8 @@ function ArtBox.create_collectable(key)
         collectable.children.center.atlas = G.ASSET_ATLAS[ref_values.atlas]
         collectable.children.center:set_sprite_pos(ref_values.pos)
 
-        collectable.children.floating_sprite = Sprite(collectable.T.x, collectable.T.y, collectable.T.w, collectable.T.h, G.ASSET_ATLAS[ref_values.atlas], ref_values.soul_pos)
+        collectable.children.floating_sprite = Sprite(collectable.T.x, collectable.T.y, collectable.T.w, collectable.T.h,
+            G.ASSET_ATLAS[ref_values.atlas], ref_values.soul_pos)
         collectable.children.floating_sprite.role.draw_major = collectable
         collectable.children.floating_sprite.states.hover.can = false
         collectable.children.floating_sprite.states.click.can = false
@@ -407,25 +408,30 @@ function ArtBox.create_collectable(key)
 end
 
 SMODS.DrawStep {
-  key = 'collectable_shaders',
-  order = 61,
-  func = function(self, layer)
-    if self.ability.set == 'collectable' then
-      if self.config.center.key == 'c_artb_mod_collectable' and self.ability.extra.shader then
-        local scale_mod = 0.07 + 0.02 * math.sin(1.8 * G.TIMERS.REAL) + 0.00 * math.sin((G.TIMERS.REAL - math.floor(G.TIMERS.REAL)) * math.pi * 14) * (1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL))) ^ 3
-        local rotate_mod = 0.05 * math.sin(1.219 * G.TIMERS.REAL) + 0.00 * math.sin((G.TIMERS.REAL) * math.pi * 5) * (1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL))) ^ 2
+    key = 'collectable_shaders',
+    order = 61,
+    func = function(self, layer)
+        if self.ability.set == 'collectable' then
+            if self.config.center.key == 'c_artb_mod_collectable' and self.ability.extra.shader then
+                local scale_mod = 0.07 + 0.02 * math.sin(1.8 * G.TIMERS.REAL) +
+                0.00 * math.sin((G.TIMERS.REAL - math.floor(G.TIMERS.REAL)) * math.pi * 14) *
+                (1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL))) ^ 3
+                local rotate_mod = 0.05 * math.sin(1.219 * G.TIMERS.REAL) +
+                0.00 * math.sin((G.TIMERS.REAL) * math.pi * 5) * (1 - (G.TIMERS.REAL - math.floor(G.TIMERS.REAL))) ^ 2
 
-        self.children.floating_sprite:draw_shader(self.ability.extra.shader, nil, self.ARGS.send_to_shader, nil, self.children.center, scale_mod, rotate_mod)
-        if self.ability.extra.shader == 'negative' then
-          self.children.floating_sprite:draw_shader('negative_shine', nil, self.ARGS.send_to_shader, nil, self.children.center, scale_mod, rotate_mod)
+                self.children.floating_sprite:draw_shader(self.ability.extra.shader, nil, self.ARGS.send_to_shader, nil,
+                    self.children.center, scale_mod, rotate_mod)
+                if self.ability.extra.shader == 'negative' then
+                    self.children.floating_sprite:draw_shader('negative_shine', nil, self.ARGS.send_to_shader, nil,
+                        self.children.center, scale_mod, rotate_mod)
+                end
+            end
+            if self:should_draw_base_shader() and ArtBox_config.collectable_shine then
+                self.children.center:draw_shader('voucher', nil, self.ARGS.send_to_shader)
+            end
         end
-      end
-      if self:should_draw_base_shader() and ArtBox_config.collectable_shine then
-        self.children.center:draw_shader('voucher', nil, self.ARGS.send_to_shader)
-      end
-    end
-  end,
-  conditions = { vortex = false, facing = 'front' },
+    end,
+    conditions = { vortex = false, facing = 'front' },
 }
 
 --#endregion
@@ -443,7 +449,7 @@ SMODS.ConsumableType({
             text = { 'Find this card in an unseeded', 'run to find out what it does' }
         }
     },
-    collection_rows = { 5,5 },
+    collection_rows = { 5, 5 },
     shop_rate = 0,
     default = 'c_artb_art_paper'
 })

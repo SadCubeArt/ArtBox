@@ -20,7 +20,7 @@ return {
             artb_menu = "Toggle Custom Menu",
             artb_fill= "Fill!",
             artb_empty= "Empty",
-            artb_fired= "Fired"
+            artb_fired= "Fired!"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -536,7 +536,16 @@ return {
                     "{C:inactive}(Must have room, or another{}",
                     "{C:inactive}Gros Michel Collectable already){}"
                 }
-            }
+            },
+
+            c_artb_art_pottery = {
+                name = 'Pottery',
+                text = {
+                    "Enchances {C:attention}#1#{}",
+                    "selected cards to",
+                    "{C:attention}Clay Cards{}",
+                }
+            },
         },
         Planet={
             c_artb_vesta={

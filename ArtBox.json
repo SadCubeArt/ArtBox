@@ -8,7 +8,7 @@
 	"main_file": "ArtBox.lua",
 	"priority": 0,
 	"badge_colour": "14b3ad",
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"dependencies": [
 		"Steamodded (>=1.0.0~BETA-0827c)"
 	]
