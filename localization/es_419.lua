@@ -451,7 +451,7 @@ return {
                 name = 'Esculpir',
                 text = {
                     "Mejora {C:attention}#1#{} carta seleccionadas",
-                    "en {C:attention}cartas de marmol{}",
+                    "a {C:attention}cartas de mármol{}",
                 }
             },
             c_artb_art_mystery_box = {
@@ -468,7 +468,14 @@ return {
                     "{C:inactive,s:0.8}(Debe haber espacio{}",
                     "{C:inactive,s:0.8}o tener un Gros Michel Coleccionable{}",
                 }
-            }
+            },
+            c_artb_art_pottery = {
+                name = 'Alfarería',
+                text = {
+                    "Mejora {C:attention}#1#{} carta seleccionadas",
+                    "en {C:attention}cartas de arcilla{}",
+                }
+            },
         },
         Planet={
             c_artb_vesta={
@@ -526,6 +533,15 @@ return {
                     "Otorga {X:chips,C:white}X2{} Fichas después",
                     "de jugarse {C:attention}4{} veces",
                     "{C:inactive}(#2#/4){}"
+                }
+            },
+            m_artb_clay = {
+                name = 'Carta de Arcilla',
+                text = {
+                    "{C:mult}+#1#{} Multi al sacarse,",
+                    "la primera vez que este en mano",
+                    "y la puntuación se {C:attention}queme{} pierde",
+                    "su habilidad y {C:attention}duplica{} su Multi",
                 }
             },
         },
