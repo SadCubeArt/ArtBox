@@ -42,7 +42,7 @@ SMODS.Consumable {
         localize("artb_null"),
         G.GAME.hands["artb_null"].l_mult,
         G.GAME.hands["artb_null"].l_chips,
-        colours = { (to_big(G.GAME.hands["artb_null"].level) == to_big(1) and G.C.UI.TEXT_DARK or G.C.HAND_LEVELS[math.min(7, G.GAME.hands["artb_null"].level)]) }
+        colours = { (G.GAME.hands["artb_null"].level == 1 and G.C.UI.TEXT_DARK or G.C.HAND_LEVELS[math.min(7, G.GAME.hands["artb_null"].level)]) }
       }
     }
   end,
