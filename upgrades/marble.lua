@@ -24,6 +24,7 @@ SMODS.Enhancement({
   end,
 
   calculate = function(self, card, context)
+	card.ability.extra.progress = card.ability.extra.progress or 0
     if context.final_scoring_step and context.cardarea == G.play and not context.debuffed and card.ability.extra.progress < 4 then
       G.E_MANAGER:add_event(Event({
         trigger = 'after',
