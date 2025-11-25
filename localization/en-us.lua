@@ -20,7 +20,8 @@ return {
             artb_menu = "Toggle Custom Menu",
             artb_fill= "Fill!",
             artb_empty= "Empty",
-            artb_fired= "Fired!"
+            artb_fired= "Fired!",
+            artb_bug= "Bug!"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -60,6 +61,7 @@ return {
                     "{C:mult}+#1#{} Mult",
                     "When {C:attention}blind{} is selected,",
                     "creates a copy of this Joker",
+                    "{C:inactive}(Must have room){}",
                 }
             },
 
@@ -328,6 +330,13 @@ return {
                 }}
             },
 
+            j_artb_bug = {
+                name = 'Hey Check Out This Cool Bug',
+                text = {{
+                    "{C:attention}???{} when scored hand contains {C:attention}???{}",
+                }}
+            },
+
 
 
         },
@@ -449,9 +458,9 @@ return {
                 text = {
                     'Gives the total sell',
                     'value of all held consumables',
-                    '{C:inactive}(max of {C:money}$30{}){}',
+                    '{C:inactive}(max of {}{C:money}$30{}{C:inactive}){}',
                     'and creates a {C:attention}Collectable Joker{}',
-                    '{C:inactive}(Currently: {C:money}$#2#{}){}'
+                    '{C:inactive}(Currently: {}{C:money}$#2#{}{C:inactive}){}'
                 }
             },
 
