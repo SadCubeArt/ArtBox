@@ -1,0 +1,19 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 2
+
+    # Prevent "USE" button on Joker Collectables in deck
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+else
+    draw_card(G.deck,G.hand, i*100/hand_space,'up', true, cards_to_draw[i])
+end
+'''
+position = "after"
+payload = '''
+SMODS.calculate_context({artb_draw = true, other_card = cards_to_draw[i]})
+'''
+match_indent = true

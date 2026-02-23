@@ -21,7 +21,8 @@ return {
             artb_fill= "Fill!",
             artb_empty= "Empty",
             artb_fired= "Fired!",
-            artb_bug= "Bug!"
+            artb_bug= "Bug!",
+            artb_molded= "Molded!",
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
