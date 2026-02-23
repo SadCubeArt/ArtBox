@@ -20,7 +20,8 @@ return {
             artb_menu = "Toggle Custom Menu",
             artb_fill= "Fill!",
             artb_empty= "Empty",
-            artb_fired= "Fired!"
+            artb_fired= "Fired!",
+            artb_bug= "Bug!"
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -60,6 +61,7 @@ return {
                     "{C:mult}+#1#{} Mult",
                     "When {C:attention}blind{} is selected,",
                     "creates a copy of this Joker",
+                    "{C:inactive}(Must have room){}",
                 }
             },
 
@@ -328,6 +330,21 @@ return {
                 }}
             },
 
+            j_artb_bug = {
+                name = 'Hey Check Out This Cool Bug',
+                text = {{
+                    "{C:attention}???{} when scored hand contains {C:attention}???{}",
+                }}
+            },
+
+            j_artb_recursion = {
+                name = 'Recursion',
+                text = {{
+                    "Creates an {C:attention}Recursive Tag{}",
+                    "when {C:attention}Boss Blind{} is defeated"
+                }}
+            },
+
 
 
         },
@@ -398,6 +415,15 @@ return {
                     "Gives a free",
                     "Mega Arts & Crafts Pack"
                 }
+            },
+            tag_artb_recursive = {
+                name = "Recursive Tag",
+                text = {
+                    "Gives a random {C:attention}Tag{}",
+                    "per {C:attention}Recursive Tag{}",
+                    "obtained this run",
+                    "{C:inactive}(Will give{} {C:attention}#1#{}{C:inactive}){}"
+                }
             }
         },
         art = {
@@ -449,9 +475,9 @@ return {
                 text = {
                     'Gives the total sell',
                     'value of all held consumables',
-                    '{C:inactive}(max of {C:money}$30{}){}',
+                    '{C:inactive}(max of {}{C:money}$30{}{C:inactive}){}',
                     'and creates a {C:attention}Collectable Joker{}',
-                    '{C:inactive}(Currently: {C:money}$#2#{}){}'
+                    '{C:inactive}(Currently: {}{C:money}$#2#{}{C:inactive}){}'
                 }
             },
 
