@@ -2,7 +2,7 @@ SMODS.Joker {
     key = "paint_bucket",
     config = {
       extra = {
-        uses=5,
+        uses=3,
       }
     },
     rarity = 1,
