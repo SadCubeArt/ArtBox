@@ -276,6 +276,10 @@ ArtBox.Collectables = {
 
     ['akyrs_carmine'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 4 }, soul_pos = { x = 5, y = 5 } },
 
+    ['pl_lavender'] = { atlas = 'artb_collectable_atlas', pos = { x = 6, y = 12 }, soul_pos = { x = 6, y = 13 } },
+
+    ['mxms_black'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 6 }, soul_pos = { x = 3, y = 7 } },
+
     --Enhancements
     ['m_bonus'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 0 }, soul_pos = { x = 1, y = 1 } },
     ['m_mult'] = { atlas = 'artb_collectable_atlas', pos = { x = 4, y = 0 }, soul_pos = { x = 4, y = 1 } },
@@ -297,6 +301,8 @@ ArtBox.Collectables = {
     ['m_paperback_wrapped'] = { atlas = 'artb_collectable_atlas', pos = { x = 8, y = 4 }, soul_pos = { x = 8, y = 5 } },
     ['m_paperback_domino'] = { atlas = 'artb_collectable_atlas', pos = { x = 9, y = 4 }, soul_pos = { x = 9, y = 5 } },
     ['m_paperback_stained'] = { atlas = 'artb_collectable_atlas', pos = { x = 0, y = 6 }, soul_pos = { x = 0, y = 7 } },
+    ['m_paperback_sleeved'] = { atlas = 'artb_collectable_atlas', pos = { x = 7, y = 12 }, soul_pos = { x = 7, y = 13 } },
+    ['m_paperback_antique'] = { atlas = 'artb_collectable_atlas', pos = { x = 8, y = 12 }, soul_pos = { x = 8, y = 13 } },
 
     ['m_sarc_strawberry'] = { atlas = 'artb_collectable_atlas', pos = { x = 2, y = 6 }, soul_pos = { x = 2, y = 7 } },
     ['m_sarc_slime'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 6 }, soul_pos = { x = 3, y = 7 } },
@@ -340,6 +346,8 @@ ArtBox.Collectables = {
     ['m_akyrs_matcha_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 4 }, soul_pos = { x = 2, y = 5 } },
     ['m_akyrs_earl_grey_tea_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 4 }, soul_pos = { x = 3, y = 5 } },
     ['m_akyrs_zap_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 4 }, soul_pos = { x = 4, y = 5 } },
+
+    ['m_mxms_footprint'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 6 }, soul_pos = { x = 2, y = 7 } },
 
     --Editions
     ['e_polychrome'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'polychrome', },
