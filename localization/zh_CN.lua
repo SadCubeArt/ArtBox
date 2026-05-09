@@ -436,7 +436,7 @@ return {
                 }
             },
             c_artb_art_art_block = {
-                name = 'Art Block',
+                name = '灵感枯竭',
                 text = {
                     "强化{C:attention}#1#{}张",
                     "选中的卡牌变成",
@@ -505,7 +505,7 @@ return {
             },
 
             c_artb_art_carving = {
-                name = 'Carving',
+                name = '雕刻',
                 text = {
                     "强化{C:attention}#1#{}张",
                     "选中牌变为",
