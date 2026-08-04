@@ -588,7 +588,7 @@ return {
             c_artb_art_still_life = {
                 name = 'Still Life',
                 text = {
-                    "creates a",
+                    "Creates a",
                     "{C:attention}Gros Michel Collectable{}",
                     "{C:inactive}(Must have room, or another{}",
                     "{C:inactive}Gros Michel Collectable already){}"

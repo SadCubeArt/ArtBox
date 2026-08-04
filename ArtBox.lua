@@ -273,6 +273,7 @@ ArtBox.Collectables = {
 
     ['aij_smiley'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 0 }, soul_pos = { x = 6, y = 1 } },
     ['aij_melted'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 0 }, soul_pos = { x = 7, y = 1 } },
+    ['aij_eye'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 6 }, soul_pos = { x = 5, y = 7 } },
 
     ['akyrs_carmine'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 4 }, soul_pos = { x = 5, y = 5 } },
 
@@ -331,6 +332,7 @@ ArtBox.Collectables = {
     ['m_aij_wood'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 0 }, soul_pos = { x = 3, y = 1 } },
     ['m_aij_canvas'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 0 }, soul_pos = { x = 4, y = 1 } },
     ['m_aij_simulated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 0 }, soul_pos = { x = 5, y = 1 } },
+    ['m_aij_scorched'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 6 }, soul_pos = { x = 4, y = 7 } },
 
     ['m_buf_porcelain'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 2 }, soul_pos = { x = 2, y = 3 } },
     ['m_buf_porcelain_g'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 } },
@@ -367,6 +369,7 @@ ArtBox.Collectables = {
     ['e_aij_silver'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 0 }, soul_pos = { x = 9, y = 1 }, shader = 'aij_silver', },
     ['e_aij_stellar'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 2 }, soul_pos = { x = 0, y = 3 }, shader = 'aij_stellar', },
     ['e_aij_aureate'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 2 }, soul_pos = { x = 1, y = 3 }, shader = 'aij_aureate', },
+    ['e_aij_misprint'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 6 }, soul_pos = { x = 6, y = 7 } },
 
     ['e_akyrs_texelated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 4 }, soul_pos = { x = 6, y = 5 }, shader = 'akyrs_texelated', },
     ['e_akyrs_noire'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 4 }, soul_pos = { x = 7, y = 5 }, shader = 'akyrs_noire', },
