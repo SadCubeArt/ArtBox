@@ -281,6 +281,9 @@ ArtBox.Collectables = {
 
     ['mxms_black'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 6 }, soul_pos = { x = 3, y = 7 } },
 
+    ['ortalab_cyan'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 6 }, soul_pos = { x = 7, y = 7 } },
+    ['ortalab_magenta'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 6 }, soul_pos = { x = 8, y = 7 } },
+
     --Enhancements
     ['m_bonus'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 0 }, soul_pos = { x = 1, y = 1 } },
     ['m_mult'] = { atlas = 'artb_collectable_atlas', pos = { x = 4, y = 0 }, soul_pos = { x = 4, y = 1 } },
