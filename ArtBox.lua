@@ -284,6 +284,9 @@ ArtBox.Collectables = {
     ['ortalab_cyan'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 6 }, soul_pos = { x = 7, y = 7 } },
     ['ortalab_magenta'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 6 }, soul_pos = { x = 8, y = 7 } },
 
+    ['hnds_black'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 8 }, soul_pos = { x = 2, y = 9 } },
+    ['hnds_spectralseal'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 8 }, soul_pos = { x = 1, y = 9 } },
+
     --Enhancements
     ['m_bonus'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 0 }, soul_pos = { x = 1, y = 1 } },
     ['m_mult'] = { atlas = 'artb_collectable_atlas', pos = { x = 4, y = 0 }, soul_pos = { x = 4, y = 1 } },
@@ -354,6 +357,9 @@ ArtBox.Collectables = {
 
     ['m_mxms_footprint'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 6 }, soul_pos = { x = 2, y = 7 } },
 
+    ['m_hnds_aberrant'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 6 }, soul_pos = { x = 9, y = 7 } },
+    ['m_hnds_obsidian'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 8 }, soul_pos = { x = 0, y = 9 } },
+
     --Editions
     ['e_polychrome'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'polychrome', },
     ['e_foil'] = { atlas = 'artb_collectable_atlas', pos = { x = 6, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'foil', },
@@ -378,6 +384,8 @@ ArtBox.Collectables = {
     ['e_akyrs_noire'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 4 }, soul_pos = { x = 7, y = 5 }, shader = 'akyrs_noire', },
     ['e_akyrs_sliced'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 4 }, soul_pos = { x = 8, y = 5 } },
     ['e_akyrs_burnt'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 4 }, soul_pos = { x = 9, y = 5 } },
+
+    ['e_hnds_vintage'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 8 }, soul_pos = { x = 3, y = 9 }, shader = 'hnds_vintage', },
 }
 
 function ArtBox.add_collectible(key, args)
