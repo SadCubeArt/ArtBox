@@ -32,7 +32,7 @@ SMODS.Consumable {
 				delay = 0.1,
 				func = function()
 					if highlighted then
-						highlighted:set_seal("artb_ouroboros")
+						highlighted:set_seal("artb_ouroboros", nil, true)
 					end
 					return true
 				end,
