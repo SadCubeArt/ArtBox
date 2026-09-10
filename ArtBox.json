@@ -11,5 +11,6 @@
 	"version": "0.7.5",
 	"dependencies": [
 		"Steamodded (>=1.0.0~BETA-0827c)"
-	]
+	],
+	"icon_path": "modicon.png"
 }
