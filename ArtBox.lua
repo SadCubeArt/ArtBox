@@ -76,13 +76,6 @@ end
 
 --#region Atlases
 SMODS.Atlas {
-    key = 'modicon',
-    px = 34,
-    py = 34,
-    path = 'modicon.png'
-}
-
-SMODS.Atlas {
     key = "joker_atlas",
     path = "jokers.png",
     px = 71,
