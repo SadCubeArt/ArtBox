@@ -125,6 +125,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+    key = "states_atlas",
+    path = "multistate.png",
+    px = 71,
+    py = 95,
+    atlas_table = "STATE_ATLAS"
+}
+
+SMODS.Atlas {
     key = "boosters_atlas",
     path = "boosters.png",
     px = 71,
@@ -273,12 +281,19 @@ ArtBox.Collectables = {
 
     ['aij_smiley'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 0 }, soul_pos = { x = 6, y = 1 } },
     ['aij_melted'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 0 }, soul_pos = { x = 7, y = 1 } },
+    ['aij_eye'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 6 }, soul_pos = { x = 5, y = 7 } },
 
     ['akyrs_carmine'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 4 }, soul_pos = { x = 5, y = 5 } },
 
     ['pl_lavender'] = { atlas = 'artb_collectable_atlas', pos = { x = 6, y = 12 }, soul_pos = { x = 6, y = 13 } },
 
     ['mxms_black'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 6 }, soul_pos = { x = 3, y = 7 } },
+
+    ['ortalab_cyan'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 6 }, soul_pos = { x = 7, y = 7 } },
+    ['ortalab_magenta'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 6 }, soul_pos = { x = 8, y = 7 } },
+
+    ['hnds_black'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 8 }, soul_pos = { x = 2, y = 9 } },
+    ['hnds_spectralseal'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 8 }, soul_pos = { x = 1, y = 9 } },
 
     --Enhancements
     ['m_bonus'] = { atlas = 'artb_collectable_atlas', pos = { x = 1, y = 0 }, soul_pos = { x = 1, y = 1 } },
@@ -331,6 +346,7 @@ ArtBox.Collectables = {
     ['m_aij_wood'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 0 }, soul_pos = { x = 3, y = 1 } },
     ['m_aij_canvas'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 0 }, soul_pos = { x = 4, y = 1 } },
     ['m_aij_simulated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 5, y = 0 }, soul_pos = { x = 5, y = 1 } },
+    ['m_aij_scorched'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 6 }, soul_pos = { x = 4, y = 7 } },
 
     ['m_buf_porcelain'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 2 }, soul_pos = { x = 2, y = 3 } },
     ['m_buf_porcelain_g'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 } },
@@ -348,6 +364,9 @@ ArtBox.Collectables = {
     ['m_akyrs_zap_card'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 4, y = 4 }, soul_pos = { x = 4, y = 5 } },
 
     ['m_mxms_footprint'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 2, y = 6 }, soul_pos = { x = 2, y = 7 } },
+
+    ['m_hnds_aberrant'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 6 }, soul_pos = { x = 9, y = 7 } },
+    ['m_hnds_obsidian'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 8 }, soul_pos = { x = 0, y = 9 } },
 
     --Editions
     ['e_polychrome'] = { atlas = 'artb_collectable_atlas', pos = { x = 3, y = 2 }, soul_pos = { x = 3, y = 3 }, shader = 'polychrome', },
@@ -367,11 +386,14 @@ ArtBox.Collectables = {
     ['e_aij_silver'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 0 }, soul_pos = { x = 9, y = 1 }, shader = 'aij_silver', },
     ['e_aij_stellar'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 0, y = 2 }, soul_pos = { x = 0, y = 3 }, shader = 'aij_stellar', },
     ['e_aij_aureate'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 1, y = 2 }, soul_pos = { x = 1, y = 3 }, shader = 'aij_aureate', },
+    ['e_aij_misprint'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 6 }, soul_pos = { x = 6, y = 7 } },
 
     ['e_akyrs_texelated'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 6, y = 4 }, soul_pos = { x = 6, y = 5 }, shader = 'akyrs_texelated', },
     ['e_akyrs_noire'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 7, y = 4 }, soul_pos = { x = 7, y = 5 }, shader = 'akyrs_noire', },
     ['e_akyrs_sliced'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 8, y = 4 }, soul_pos = { x = 8, y = 5 } },
     ['e_akyrs_burnt'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 9, y = 4 }, soul_pos = { x = 9, y = 5 } },
+
+    ['e_hnds_vintage'] = { atlas = 'artb_collectable_atlas_2', pos = { x = 3, y = 8 }, soul_pos = { x = 3, y = 9 }, shader = 'hnds_vintage', },
 }
 
 function ArtBox.add_collectible(key, args)

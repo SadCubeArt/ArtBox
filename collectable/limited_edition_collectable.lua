@@ -51,7 +51,7 @@ SMODS.Consumable({
   remove_from_deck = function(self, card, from_debuff)
     for i = 1, #G.consumeables.cards do
 			local _card = G.consumeables.cards[i]
-			if _card.config.center.key == 'c_artb_limited_edition_collectable' then
+			if _card.config.center.key == 'c_artb_limited_edition_collectable' and _card.ability.extra.original==true then
 				_card.ability.extra_value = _card.ability.extra_value + _card.ability.extra.added_value
         SMODS.calculate_effect({ extra = { message = localize('k_val_up'), colour = G.C.MONEY } }, _card)
         _card:set_cost()

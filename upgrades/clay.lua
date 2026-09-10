@@ -1,7 +1,20 @@
 SMODS.Enhancement({
   key = "clay",
-  atlas = "enhancers_atlas",
+  atlas = "states_atlas",
   pos = { x = 0, y = 2 },
+  sprite_args = {
+    states = {
+      base = {
+        start_pos = { x = 0, y = 1 },
+        frames = 1
+      },
+      fired = {
+        start_pos = { x = 1, y = 1 },
+        frames = 1
+      }
+    },
+    default_state = "base"
+  },
   discovered = true,
   config = {
     extra = {
@@ -43,11 +56,12 @@ SMODS.Enhancement({
       end
     end
 
-    if context.final_scoring_step and card.ability.extra.fired == false and context.cardarea == G.hand and to_big(G.GAME.blind.chips) <= to_big(hand_chips) * to_big(mult) then
+    if context.final_scoring_step and card.ability.extra.fired == false and context.cardarea == G.hand and G.GAME.blind.chips <= hand_chips * mult then
       card.ability.perma_mult = card.ability.perma_mult * 2
       G.E_MANAGER:add_event(Event({
         trigger = 'before',
         func = function()
+          card:set_sprite_state("fired")
           card.ability.extra.fired = true
           return true;
         end
@@ -59,14 +73,4 @@ SMODS.Enhancement({
       }
     end
   end,
-
-  draw = function(self, card, layer)
-    if (layer == 'card' or layer == 'both') then
-      if card.ability.extra.fired then
-        card.children.center:set_sprite_pos({ x = 1, y = 2 })
-      else
-        card.children.center:set_sprite_pos({ x = 0, y = 2 })
-      end
-    end
-  end
 })

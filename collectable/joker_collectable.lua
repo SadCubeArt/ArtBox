@@ -8,6 +8,7 @@ SMODS.Consumable({
     config = {
        extra = { 
         added_value = 4,
+        original=false,
       } 
       },
     keep_on_use = function(self, card)
@@ -30,6 +31,7 @@ SMODS.Consumable({
       end
     }))
     if next(SMODS.find_card('c_artb_joker_collectable', count_debuffed))  then
+      card.ability.extra.original=false
       G.E_MANAGER:add_event(Event({
       func = function()
         play_sound('coin1')
@@ -38,13 +40,13 @@ SMODS.Consumable({
       return true end
       }))
     else
-      First=true
+      card.ability.extra.original=true
     end
   end,
   remove_from_deck = function(self, card, from_debuff)
     for i = 1, #G.consumeables.cards do
 			local _card = G.consumeables.cards[i]
-			if _card.config.center.key == 'c_artb_joker_collectable' then
+			if _card.config.center.key == 'c_artb_joker_collectable' and _card.ability.extra.original==true then
 				_card.ability.extra_value = _card.ability.extra_value + _card.ability.extra.added_value
         SMODS.calculate_effect({ extra = { message = localize('k_val_up'), colour = G.C.MONEY } }, _card)
       _card:set_cost()

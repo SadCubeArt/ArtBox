@@ -1,7 +1,32 @@
 SMODS.Enhancement({
   key = "marble",
-  atlas = "enhancers_atlas",
-  pos = { x = 0, y = 1 },
+  atlas = "states_atlas",
+  pos = { x = 0, y = 0 },
+  sprite_args = {
+    states = {
+      progress0 = {
+        start_pos = { x = 0, y = 0 },
+        frames = 1
+      },
+      progress1 = {
+        start_pos = { x = 1, y = 0 },
+        frames = 1
+      },
+      progress2 = {
+        start_pos = { x = 2, y = 0 },
+        frames = 1
+      },
+      progress3 = {
+        start_pos = { x = 3, y = 0 },
+        frames = 1
+      },
+      progress4 = {
+        start_pos = { x = 4, y = 0 },
+        frames = 1
+      },
+    },
+    default_state = "progress0"
+  },
   discovered = true,
   no_rank = true,
   no_suit = true,
@@ -24,11 +49,13 @@ SMODS.Enhancement({
   end,
 
   calculate = function(self, card, context)
+    card.ability.extra.progress = card.ability.extra.progress or 0
     if context.final_scoring_step and context.cardarea == G.play and not context.debuffed and card.ability.extra.progress < 4 then
       G.E_MANAGER:add_event(Event({
         trigger = 'after',
         func = function()
           card.ability.extra.progress = card.ability.extra.progress + 1
+          card:set_sprite_state("progress" .. card.ability.extra.progress)
           card:juice_up()
 
           if card.ability.extra.progress >= 4 then
@@ -39,27 +66,16 @@ SMODS.Enhancement({
       }))
     end
   end,
-
-  draw = function(self, card, layer)
-    if (layer == 'card' or layer == 'both') then
-      if card.ability.extra.progress < 4 then
-        card.children.center:set_sprite_pos({ x = card.ability.extra.progress, y = 1 })
-      else
-        card.children.center:set_sprite_pos({ x = 4, y = 1 })
-      end
-      
-    end
-  end
 })
 
 local card_isfaceref = Card.is_face
 
 function Card:is_face(from_boss)
-    if self.debuff and not from_boss then return end
-	
-	if self.config.center == G.P_CENTERS.m_artb_marble and self.ability.extra.progress >= 4 then
-		return true
-	end
-	
-	return card_isfaceref(self, from_boss)
+  if self.debuff and not from_boss then return end
+
+  if self.config.center == G.P_CENTERS.m_artb_marble and self.ability.extra.progress >= 4 then
+    return true
+  end
+
+  return card_isfaceref(self, from_boss)
 end
