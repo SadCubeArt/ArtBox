@@ -53,13 +53,9 @@ SMODS.Joker {
             card.ability.extra.odds = 1
             card.ability.extra.active = false
         end
-    end,
 
-    add_to_deck = function(self, card, from_debuff)
-        G.P_CENTERS['e_negative'].weight = G.P_CENTERS['e_negative'].weight * 2
-    end,
-
-    remove_from_deck = function(self, card, from_debuff)
-        G.P_CENTERS['e_negative'].weight = G.P_CENTERS['e_negative'].weight / 2
+        if context.modify_weights and context.pool_types['Edition'] then
+            context.pool['e_negative'].weight = context.pool['e_negative'].weight * 2
+        end
     end,
 }
