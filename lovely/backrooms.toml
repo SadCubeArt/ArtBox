@@ -1,0 +1,17 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+[[patches]]
+[patches.pattern]
+target = 'functions/button_callbacks.lua'
+pattern = '''
+local final_free = G.GAME.current_round.free_rerolls > 0
+'''
+position = 'before'
+payload = '''
+SMODS.calculate_context({artb_pre_reroll = true})
+'''
+match_indent = true
+times = 1

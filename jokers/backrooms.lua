@@ -22,10 +22,22 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
     
-        if context.reroll_shop and not card.ability.extra.active then
+        if context.artb_pre_reroll and not card.ability.extra.active then
             if SMODS.pseudorandom_probability(card, 'backrooms_roll_' .. card.ability.extra.odds, card.ability.extra.odds, card.ability.extra.prob, nil, true ) then
                 card.ability.extra.active = true
                 card:juice_up()
+                for _, v in pairs(G.shop_vouchers.cards) do
+                    v:set_ability('j_artb_backrooms')
+                    v:set_cost()
+                    create_shop_card_ui(v)
+                end
+                for _, v in pairs(G.shop_booster.cards) do
+                    v:set_ability('j_artb_backrooms')
+                    v.T.w = G.CARD_W
+                    v.T.h = G.CARD_H
+                    v:set_cost()
+                    create_shop_card_ui(v)
+                end
             else
                 card.ability.extra.odds = card.ability.extra.odds + 1
             end
