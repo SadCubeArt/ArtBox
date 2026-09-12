@@ -97,7 +97,7 @@ return {
                     "When {C:attention}Blind{} is selected,",
                     "{C:green}#1# in #2#{} chance",
                     "to create a",
-                    "{C:attention}Joker Collectable{}",
+                    "{C:collectable}Joker Collectable{}",
                 }
             },
 
@@ -235,7 +235,7 @@ return {
                     "{C:inactive}(Up to {C:attention}3{} {C:inactive}Seals stacked){}",
                 },
                 {
-                    "Adds a {C:attention}Brick Seal Collectable{}",
+                    "Adds a {C:collectable}Brick Seal Collectable{}",
                     "when this Joker is obtained",
                     "{C:inactive}(Must have room){}"
                 } }
@@ -299,7 +299,7 @@ return {
                 text = {{
                     "Fills all empty consumable",
                     "slots with random rankless",
-                    "{C:attention}Collectable enhancements{}",
+                    "{C:collectable}Collectable enhancements{}",
                     "when {C:attention}obtained{} or {C:attention}sold{}"
                 }}
             },
@@ -371,7 +371,7 @@ return {
                     "When entering shop",
                     "Sets money to {C:money}$0{}",
                     "and creates a",
-                    "{C:attention}Joker Collectable{}",
+                    "{C:collectable}Joker Collectable{}",
                     "for every {C:money}$#1#{} lost"
                 }}
             },
@@ -385,7 +385,7 @@ return {
                 text = {
                     "{C:attention}+1 consumable slot{} when held",
                     "If you already have",
-                    "a {C:attention}Joker Collectable{}",
+                    "a {C:collectable}Joker Collectable{}",
                     "destroys this and gives",
                     "the other one {C:money}+#1#{} sell value"
                 }
@@ -422,7 +422,7 @@ return {
                 text = {
                     "{C:mult}+#1#{} Mult",
                     "If you already have",
-                    "a {C:attention}Gros Michel Collectable{}",
+                    "a {C:collectable}Gros Michel Collectable{}",
                     "destroys this and gives",
                     "the other one {C:mult}+#2#{} Mult"
                 }
@@ -432,7 +432,7 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
                     "If you already have",
-                    "a {C:attention}Cavendish Collectable{}",
+                    "a {C:collectable}Cavendish Collectable{}",
                     "destroys this and gives",
                     "the other one {X:mult,C:white}X#2#{} Mult"
                 }
@@ -507,7 +507,7 @@ return {
                     'Gives the total sell',
                     'value of all held consumables',
                     '{C:inactive}(max of {}{C:money}$30{}{C:inactive}){}',
-                    'and creates a {C:attention}Collectable Joker{}',
+                    'and creates a {C:collectable}Collectable Joker{}',
                     '{C:inactive}(Currently: {}{C:money}$#2#{}{C:inactive}){}'
                 }
             },
@@ -552,7 +552,7 @@ return {
                 text = {
                     'Destroys {C:attention}1{} selected',
                     'playing card and',
-                    'creates Collectables of its',
+                    'creates {C:collectable}Collectables{} of its',
                     '{C:attention}Edition{}, {C:attention}Seal{} and {C:attention}Enhancement{}',
                     '{C:inactive}(Must have room){}'
                 }
@@ -581,7 +581,7 @@ return {
                 text = {
                     "Fills all empty consumable",
                     "slots with random",
-                    "{C:attention}Modifier Collectables{}",
+                    "{C:collectable}Modifier Collectables{}",
                 }
             },
 
@@ -589,7 +589,7 @@ return {
                 name = 'Still Life',
                 text = {
                     "Creates a",
-                    "{C:attention}Gros Michel Collectable{}",
+                    "{C:collectable}Gros Michel Collectable{}",
                     "{C:inactive}(Must have room, or another{}",
                     "{C:inactive}Gros Michel Collectable already){}"
                 }
@@ -702,7 +702,7 @@ return {
                 name = 'Used Supplies',
                 text = {
                     "When a card is destroyed,",
-                    'get a {C:dark_edition}Negative{} collectable of its',
+                    'get a {C:dark_edition}Negative{} {C:collectable}Collectable{} of its',
                     '{C:attention}Edition{}, {C:attention}Seal{} and {C:attention}Enhancement{}',
                 },
             },
@@ -715,7 +715,7 @@ return {
                     "Start run with the",
                     "{C:attention,T:v_artb_pen_holder}#1#{} voucher",
                     "and a random {C:attention}enhancement{},",
-                    "{C:attention}seal{} and {C:attention}edition{} Collectable"
+                    "{C:attention}seal{} and {C:attention}edition{} {C:collectable}Collectable"
                 }
             },
 
