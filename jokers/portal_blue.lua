@@ -12,16 +12,18 @@ SMODS.Joker {
         if not card.fake_card then
             info_queue[#info_queue+1] = G.P_CENTERS.j_artb_portal_orange
         end
-
+        
         local in_between = false
         local count = 0
-        for _, v in pairs(G.jokers.cards) do
-            if v.config.center_key == 'j_artb_portal_orange' then
-                in_between = true
-                count = 0
-            elseif v == card then break
-            elseif in_between then
-                count = count + 1
+        if G.jokers then
+            for _, v in pairs(G.jokers.cards) do
+                if v.config.center_key == 'j_artb_portal_orange' then
+                    in_between = true
+                    count = 0
+                elseif v == card then break
+                elseif in_between then
+                    count = count + 1
+                end
             end
         end
 
