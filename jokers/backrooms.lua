@@ -22,7 +22,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
     
-        if context.artb_pre_reroll and not card.ability.extra.active then
+        if context.artb_pre_reroll and not card.ability.extra.active and not context.blueprint then
             if SMODS.pseudorandom_probability(card, 'backrooms_roll_' .. card.ability.extra.odds, card.ability.extra.odds, card.ability.extra.prob, nil, true ) then
                 card.ability.extra.active = true
                 card:juice_up()
@@ -43,13 +43,13 @@ SMODS.Joker {
             end
         end
 
-        if context.create_shop_card and card.ability.extra.active then
+        if context.create_shop_card and card.ability.extra.active and not context.blueprint then
             return {
                 shop_create_flags = { key = 'j_artb_backrooms', key_append = 'sho' }
             }
         end
 
-        if context.ending_shop then
+        if context.ending_shop and not context.blueprint then
             card.ability.extra.odds = 1
             card.ability.extra.active = false
         end
