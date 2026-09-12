@@ -23,7 +23,8 @@ return {
             artb_fired= "Fired!",
             artb_bug= "Bug!",
             artb_molded= "Clay!",
-            artb_stained="Stained!"
+            artb_stained="Stained!",
+            artb_lost="Lost",
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
@@ -376,6 +377,15 @@ return {
                 }}
             },
 
+            j_artb_backrooms = {
+                name = 'Backrooms',
+                text = {{
+                    "Jokers in the {C:attention}Shop{}",
+                    "are {C:attention}#1#X{} more likely",
+                    "to be {C:dark_edition}Negative{}",
+                    "{C:inactive}Don't get lost...{}"
+                }}
+            },
 
 
         },

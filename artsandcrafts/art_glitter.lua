@@ -8,11 +8,6 @@ SMODS.Consumable ({
 	cost = 4,
 	unlocked = true,
 	discovered = true,
-    loc_vars = function(self, info_queue)
-		info_queue[#info_queue+1] = G.P_CENTERS.e_foil
-        info_queue[#info_queue+1] = G.P_CENTERS.e_holo
-        info_queue[#info_queue+1] = G.P_CENTERS.e_polychrome
-	end,
     can_use = function(self, card)
         if G.hand and G.hand.cards and #G.hand.cards > 0 then
             for k, v in ipairs(G.hand.cards) do
