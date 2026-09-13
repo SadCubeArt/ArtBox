@@ -454,7 +454,39 @@ local igo = Game.init_game_object
 Game.init_game_object = function(self)
     local ret = igo(self)
     ret.artb_recursives_used = 1
+    ret.artb_spears_sold = 0
+    ret.artb_spears_to_trigger = 0
     return ret
+end
+
+ArtBox.calculate = function(self, context)
+    if context.final_scoring_step and G.GAME.artb_spears_to_trigger > 0 then
+        local spear_effects = {}
+        for i = 1, G.GAME.artb_spears_to_trigger do
+            spear_effects[#spear_effects+1] = { xmult = 3 }
+        end
+        G.GAME.artb_spears_to_trigger = 0
+        return SMODS.merge_effects(spear_effects)
+    end
+
+    if context.end_of_round and context.main_eval and G.GAME.artb_spears_sold > 0 then
+        for i = 1, G.GAME.artb_spears_sold do
+            if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+                G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+                G.E_MANAGER:add_event(Event({
+                    delay = 0.2,
+                    trigger = 'after',
+                    func = function()
+                        local _c = SMODS.add_card { key = 'j_artb_spear' }
+                        _c:start_materialize()
+                        G.GAME.joker_buffer = 0
+                        return true;
+                    end
+                }))
+            end
+        end
+        G.GAME.artb_spears_sold = 0
+    end
 end
 --#endregion
 
