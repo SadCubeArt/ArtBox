@@ -9,7 +9,7 @@ SMODS.Joker {
     perishable_compat = false,
 
     calculate = function(self, card, context)
-        if context.selling_self then
+        if context.selling_self and G.GAME.blind and G.GAME.blind.in_blind then
             G.GAME.artb_spears_sold = G.GAME.artb_spears_sold + 1
             G.GAME.artb_spears_to_trigger = G.GAME.artb_spears_to_trigger + 1
         end
