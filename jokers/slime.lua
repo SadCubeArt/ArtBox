@@ -5,7 +5,7 @@ SMODS.Joker {
             cards_to_create = 2
         }
     },
-    pos = { x = 4, y = 0 },
+    pos = { x = 3, y = 0 },
     atlas = 'joker_atlas',
     unlocked = true,
     discovered = true,
