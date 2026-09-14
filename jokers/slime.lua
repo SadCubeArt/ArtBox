@@ -1,11 +1,11 @@
---[[ SMODS.Joker {
-    key = 'fungus',
+SMODS.Joker {
+    key = 'slime',
     config = {
         extra = {
             cards_to_create = 2
         }
     },
-    pos = { x = 1, y = 7 },
+    pos = { x = 4, y = 0 },
     atlas = 'joker_atlas',
     unlocked = true,
     discovered = true,
@@ -18,8 +18,13 @@
     end,
 
     calculate = function(self, card, context)
-        if context.remove_playing_cards then
-            for k, v in pairs(context.removed) do
+        if context.setting_blind then
+            local eval = function() return G.GAME.current_round.hands_played == 0 end
+            juice_card_until(card, eval, true)
+        end
+
+        if context.destroying_card and G.GAME.current_round.hands_played == 0 and #context.full_hand == 1 then
+            for i = 1, card.ability.extra.cards_to_create do
                 G.E_MANAGER:add_event(Event({
                     delay = 1,
                     trigger = 'before',
@@ -31,6 +36,9 @@
                     end
                 }))
             end
+            return {
+                remove = true
+            }
         end
     end,
-} ]]
+}
