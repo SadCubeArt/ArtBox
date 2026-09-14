@@ -1,7 +1,9 @@
 SMODS.Joker {
     key = 'portal_blue',
+    rarity = 3,
     pos = { x = 6, y = 3 },
     atlas = 'joker_atlas',
+    cost = 8,
     unlocked = true,
     discovered = true,
     blueprint_compat = true,

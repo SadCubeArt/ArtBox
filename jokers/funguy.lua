@@ -1,12 +1,14 @@
 SMODS.Joker {
-    key = 'fungus',
+    key = 'funguy',
     config = {
         extra = {
             cards_to_spread = 2
         }
     },
+    rarity = 2,
     pos = { x = 1, y = 7 },
     atlas = 'joker_atlas',
+    cost = 5,
     unlocked = true,
     discovered = true,
     blueprint_compat = false,
@@ -56,12 +58,16 @@ SMODS.Joker {
                                     end
                                 }))
                             end
-                            SMODS.calculate_effect({ message = localize('k_upgrade_ex'), delay = 0.2, func = trigger_func, sound = 'tarot1' }, card_to_upgrade)
+                            SMODS.calculate_effect({ message = localize('artb_spored'), delay = 0.2, func = trigger_func, sound = 'tarot1' }, card_to_upgrade)
                         end
                     end
                     delay(0.25)
                 end
             end
         end
+    end,
+
+    remove_from_deck = function(self, card, from_debuff)
+        SMODS.calculate_effect({message = localize('artb_shroom'), colour = G.C.MULT}, card)
     end,
 }

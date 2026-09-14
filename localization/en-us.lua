@@ -11,30 +11,32 @@ return {
             artb_plus_tag = "+1 Tag",
             artb_wood = "Wood!",
             artb_wild = "Wild",
-            artb_hungry="Hungry",
-            artb_fed="Fed",
-            artb_starved="Starved :(",
-            artb_protoplanet="Protoplanet",
-            artb_stolen="Stolen!",
+            artb_hungry = "Hungry",
+            artb_fed = "Fed",
+            artb_starved = "Starved :(",
+            artb_protoplanet = "Protoplanet",
+            artb_stolen = "Stolen!",
             artb_null_hand_toggle = "Toggle Null Hand",
             artb_menu = "Toggle Custom Menu",
-            artb_fill= "Fill!",
-            artb_empty= "Empty",
-            artb_fired= "Fired!",
-            artb_bug= "Bug!",
-            artb_molded= "Clay!",
-            artb_stained="Stained!",
-            artb_lost="Lost",
+            artb_fill = "Fill!",
+            artb_empty = "Empty",
+            artb_fired = "Fired!",
+            artb_bug = "Bug!",
+            artb_molded = "Clay!",
+            artb_stained = "Stained!",
+            artb_lost = "Lost",
+            artb_spored = "Spored",
+            artb_shroom = "You cannot kill me in a way that matters",
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
             artb_brick_seal = "Brick Seal",
             artb_button_seal = "Button Seal",
         },
-        poker_hand_descriptions={
-            ["artb_null"] = {'5 Rankless Cards'},
+        poker_hand_descriptions = {
+            ["artb_null"] = { '5 Rankless Cards' },
         },
-        poker_hands={
+        poker_hands = {
             ["artb_null"] = "Null",
         },
     },
@@ -85,11 +87,11 @@ return {
                     "{C:clubs}Club{} suit give",
                     "{C:mult}+#2#{} Mult when scored",
                 },
-                {
-                    "Played cards with",
-                    "{C:spades}Spade{} suit give",
-                    "{C:chips}+#1#{} Chips when scored",
-                } }
+                    {
+                        "Played cards with",
+                        "{C:spades}Spade{} suit give",
+                        "{C:chips}+#1#{} Chips when scored",
+                    } }
             },
 
             j_artb_clawmachine = {
@@ -174,11 +176,11 @@ return {
                     "in the same hand,",
                     "destroy all {C:attention}9{}s",
                 },
-                {
-                    "Scored {C:attention}7{}s give {C:mult}+#2#{} Mult for",
-                    "each {C:attention}9{} destroyed by this card",
-                    "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
-                } }
+                    {
+                        "Scored {C:attention}7{}s give {C:mult}+#2#{} Mult for",
+                        "each {C:attention}9{} destroyed by this card",
+                        "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
+                    } }
             },
 
             j_artb_collector = {
@@ -189,12 +191,12 @@ return {
                     "to a {C:attention}Joker{} or {C:attention}Consumable{}",
                     "to the right",
                 },
-                {
-                    "Gives {X:mult,C:white}X#1#{} Mult times",
-                    "total {C:attention}sell value{} of all owned",
-                    "{C:attention}Jokers{} and {C:attention}Consumables{}",
-                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{} {C:inactive}Mult)"
-                } }
+                    {
+                        "Gives {X:mult,C:white}X#1#{} Mult times",
+                        "total {C:attention}sell value{} of all owned",
+                        "{C:attention}Jokers{} and {C:attention}Consumables{}",
+                        "{C:inactive}(Currently: {X:mult,C:white}X#2#{} {C:inactive}Mult)"
+                    } }
             },
 
             j_artb_origami = {
@@ -235,11 +237,11 @@ return {
                     "has one {C:attention}stacks{} them",
                     "{C:inactive}(Up to {C:attention}3{} {C:inactive}Seals stacked){}",
                 },
-                {
-                    "Adds a {C:collectable}Brick Seal Collectable{}",
-                    "when this Joker is obtained",
-                    "{C:inactive}(Must have room){}"
-                } }
+                    {
+                        "Adds a {C:collectable}Brick Seal Collectable{}",
+                        "when this Joker is obtained",
+                        "{C:inactive}(Must have room){}"
+                    } }
             },
 
             j_artb_ascii = {
@@ -248,143 +250,162 @@ return {
                     "Each card in hand gives",
                     "{C:mult}+#1#{} Mult for its and every",
                     "unique rank to the left"
-                }}
+                } }
             },
 
             j_artb_gold_plating = {
                 name = 'Gold Plating',
-                text = {{
+                text = { {
                     "Gains {C:money}$#1#{} of {C:attention}sell value{}",
                     "at end of round"
                 },
-                {
-                    "Sell this Joker",
-                    "to give its {C:attention}sell value{}",
-                    "to a Joker to the right"
-                }}
+                    {
+                        "Sell this Joker",
+                        "to give its {C:attention}sell value{}",
+                        "to a Joker to the right"
+                    } }
             },
 
             j_artb_stained_glass = {
                 name = 'Stained Glass',
-                text = {{
+                text = { {
                     "{C:attention}Glass Cards{} create an",
                     "{C:attention}Art card{} when scored, and a",
                     "{C:attention}Creative Tag{} when shattered"
-                }}
+                } }
             },
 
             j_artb_paint_chips = {
                 name = 'Paint Chips',
-                text = {{
+                text = { {
                     "{X:chips,C:white}X#2#{} Chips",
                     "{X:mult,C:white}X#1#{} Mult",
-                }}
+                } }
             },
 
             j_artb_heist = {
                 name = 'Heist',
-                text = {{
+                text = { {
                     "When {C:attention}Blind{} is selected,",
                     "steals {C:attention}sell value{} of",
                     "the Joker to the right"
                 },
-                {
-                    "gives Mult equal to three",
-                    "times this Jokers {C:attention}sell value{}",
-                    "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
-                }}
+                    {
+                        "gives Mult equal to three",
+                        "times this Jokers {C:attention}sell value{}",
+                        "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
+                    } }
             },
 
             j_artb_null_pointer = {
                 name = 'Null Pointer',
-                text = {{
+                text = { {
                     "Fills all empty consumable",
                     "slots with random rankless",
                     "{C:collectable}Collectable enhancements{}",
                     "when {C:attention}obtained{} or {C:attention}sold{}"
-                }}
+                } }
             },
 
             j_artb_card_binder = {
                 name = 'Card Binder',
-                text = {{
+                text = { {
                     "{C:attention}+#1#{} hand size when",
                     "not in a {C:attention}Blind{}"
-                }}
+                } }
             },
 
             j_artb_paint_bucket = {
                 name = 'Paint Bucket',
-                text = {{
+                text = { {
                     "For the next {C:attention}#1#{} hands",
                     "give one random {C:attention}Enhancement{}",
                     "to all scored cards with same",
                     "{C:attention}Rank{} as first scoring card"
-                }}
+                } }
             },
 
             j_artb_sparkledog = {
                 name = 'Sparkledog',
-                text = {{
+                text = { {
                     "{C:chips}#1#{} Chips for each",
                     "unique {C:attention}enhancement{}, {C:attention}seal{}",
                     "and {C:attention}edition{} in {C:attention}full deck{}",
                     "{C:inactive}(Currently: {C:chips}#2#{} {C:inactive}Chips)"
-                }}
+                } }
             },
 
             j_artb_bug = {
                 name = 'Hey Check Out This Cool Bug',
-                text = {{
+                text = { {
                     "{C:attention}???{} when scored hand contains {C:attention}???{}",
-                }}
+                } }
             },
 
             j_artb_recursion = {
                 name = 'Recursion',
-                text = {{
+                text = { {
                     "Creates an {C:attention}Recursive Tag{}",
                     "when {C:attention}Boss Blind{} is defeated"
-                }}
+                } }
             },
 
             j_artb_claymation = {
                 name = 'Claymation',
-                text = {{
+                text = { {
                     "Draw a {C:attention}Clay Card{}",
                     "From your {C:attention}deck{}",
                     "at the begining of round"
-                }}
+                } }
             },
 
             j_artb_stained_joker = {
                 name = 'Stained Joker',
-                text = {{
+                text = { {
                     "If {C:attention}first discard{} of round",
                     "has only {C:attention}1{} card, enhance",
                     "it into a {C:attention}Stained Card{}",
-                }}
+                } }
             },
 
             j_artb_scalper = {
                 name = 'Scalper',
-                text = {{
+                text = { {
                     "When entering shop",
                     "Sets money to {C:money}$0{}",
                     "and creates a",
                     "{C:collectable}Joker Collectable{}",
                     "for every {C:money}$#1#{} lost"
-                }}
+                } }
             },
 
             j_artb_backrooms = {
                 name = 'Backrooms',
-                text = {{
+                text = { {
                     "Jokers in the {C:attention}Shop{}",
                     "are {C:attention}#1#X{} more likely",
                     "to be {C:dark_edition}Negative{}",
                     "{C:inactive}Don't get lost...{}"
-                }}
+                } }
+            },
+
+            j_artb_funguy = {
+                name = 'Funguy',
+                text = { {
+                    "When card is {C:attention}destroyed{}",
+                    "{C:attention}#1#{} cards in hand gain",
+                    "its {C:attention}extra{} Chips and Mult"
+                } }
+            },
+
+            j_artb_slime = {
+                name = 'Slime Joker',
+                text = { {
+                    "If {C:attention}first hand{} of round",
+                    "has only {C:attention}1{} card, it's destroyed,",
+                    "and {C:attention}#1#{} copies of it with rank",
+                    "lowered by 1 are added to the {C:attention}deck{} "
+                } }
             },
 
 
@@ -614,10 +635,10 @@ return {
                 }
             },
         },
-        Planet={
-            c_artb_vesta={
-                name="Vesta",
-                text={
+        Planet = {
+            c_artb_vesta = {
+                name = "Vesta",
+                text = {
                     "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
                     "{C:attention}Null",
                     "{C:mult}+3{} Mult and",
@@ -678,12 +699,14 @@ return {
 
             m_artb_clay = {
                 name = 'Clay Card',
-                text = {
-                    "{C:mult}+#1#{} permanent Mult when drawn,",
+                text = { {
+                    "{C:mult}+#1#{} permanent Mult when drawn",
+
+                }, {
                     "first time this card is held in hand",
                     "when score {C:attention}catches fire{} loses abilities",
                     "and {C:attention}doubles{} permanent Mult",
-                }
+                } }
             },
         },
         Voucher = {
