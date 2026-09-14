@@ -27,7 +27,7 @@ SMODS.Joker {
                     for j = 1, card.ability.extra.cards_to_spread do
                         local valid_cards = {}
                         for _, v in pairs(G.hand.cards) do
-                            if not v['fungus_'..i] and not v.getting_sliced and _c ~= v then
+                            if not v['artb_fungus_'..i] and not v.getting_sliced and _c ~= v then
                                 local valid = true
                                 for _, vv in pairs(context.removed) do
                                     if v == vv then
@@ -42,11 +42,11 @@ SMODS.Joker {
                         end
                         if next(valid_cards) then
                             local card_to_upgrade = pseudorandom_element(valid_cards, 'fungus_'..i..'_'..j)
-                            card_to_upgrade['fungus_'..i] = true
+                            card_to_upgrade['artb_fungus_'..i] = true
                             local trigger_func = function()
                                 G.E_MANAGER:add_event(Event({
                                     func = function()
-                                        card_to_upgrade['fungus_'..i] = nil
+                                        card_to_upgrade['artb_fungus_'..i] = nil
                                         if _c.ability.perma_bonus > 0 then
                                             card_to_upgrade.ability.perma_bonus = card_to_upgrade.ability.perma_bonus + _c.ability.perma_bonus
                                         end
