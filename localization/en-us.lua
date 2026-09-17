@@ -408,6 +408,18 @@ return {
                 } }
             },
 
+            j_artb_spear = {
+                name = 'Rho Spear',
+                text = { {
+                    "If sold during {C:attention}blind{}",
+                    "next hand has {X:mult,C:white}X3{} Mult",
+                },{
+                    "at end of round",
+                    "Spear is added back",
+                    "{C:inactive}(must have room){}"
+                } }
+            },
+
 
         },
         collectable = {

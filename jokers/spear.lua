@@ -1,7 +1,9 @@
 SMODS.Joker {
     key = 'spear',
+    rarity = 3,
     pos = { x = 2, y = 7 },
     atlas = 'joker_atlas',
+    cost = 8,
     unlocked = true,
     discovered = true,
     blueprint_compat = false,
