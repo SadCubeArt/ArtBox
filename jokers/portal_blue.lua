@@ -3,18 +3,23 @@ SMODS.Joker {
     rarity = 3,
     pos = { x = 6, y = 3 },
     atlas = 'joker_atlas',
-    cost = 8,
+    cost = 7,
     unlocked = true,
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+    config = {
+        extra = {
+            mult_modifier = 0.75,
+        }
+    },
 
     loc_vars = function(self, info_queue, card)
         if not card.fake_card then
-            info_queue[#info_queue+1] = G.P_CENTERS.j_artb_portal_orange
+            info_queue[#info_queue + 1] = G.P_CENTERS.j_artb_portal_orange
         end
-        
+
         local in_between = false
         local count = 0
         if G.jokers then
@@ -22,19 +27,25 @@ SMODS.Joker {
                 if v.config.center_key == 'j_artb_portal_orange' then
                     in_between = true
                     count = 0
-                elseif v == card then break
+                elseif v == card then
+                    break
                 elseif in_between then
-                    count = count + 1
+                    count = count + card.ability.extra.mult_modifier
                 end
             end
         end
 
-        return { vars = { 1 + count } }
+        return {
+            vars = {
+                count + 1,
+                card.ability.extra.mult_modifier,
+            }
+        }
     end,
 
     calculate = function(self, card, context)
         local stg = card.ability.extra
-    
+
         if context.joker_main then
             local in_between = false
             local count = 0
@@ -42,13 +53,14 @@ SMODS.Joker {
                 if v.config.center_key == 'j_artb_portal_orange' then
                     in_between = true
                     count = 0
-                elseif v == card then break
+                elseif v == card then
+                    break
                 elseif in_between then
-                    count = count + 1
+                    count = count + card.ability.extra.mult_modifier
                 end
             end
             return {
-                xmult = 1 + count
+                xmult = count + 1
             }
         end
     end,
@@ -58,7 +70,7 @@ SMODS.Joker {
         if next(oranges) then
             for _, v in pairs(oranges) do
                 if not SMODS.is_eternal(v) then
-                    SMODS.destroy_cards(v, {skip_calc = true})
+                    SMODS.destroy_cards(v, { skip_calc = true })
                     break
                 end
             end

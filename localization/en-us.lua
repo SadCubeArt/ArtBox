@@ -420,6 +420,28 @@ return {
                 } }
             },
 
+            j_artb_portal_orange = {
+                name = 'Portal (Orange)',
+                text = { {
+                    "create {C:attention}Blue Portal{} when",
+                    "this Joker is obtained",
+                    "{C:inactive}(Must have room){}"
+                },{
+                    "when either of the",
+                    "{C:attention}Portals{} is removed,",
+                    "the other one is too"
+                } }
+            },
+
+            j_artb_portal_blue = {
+                name = 'Portal (Blue)',
+                text = { {
+                    "{X:mult,C:white}X#2#{} Mult for each Joker",
+                    "between {C:attention}Orange{} and {C:attention}Blue Portal{}",
+                    "{C:inactive}(Currently: {}{X:mult,C:white}X#1#{}{C:inactive} Mult){}"
+                } }
+            },
+
 
         },
         collectable = {
