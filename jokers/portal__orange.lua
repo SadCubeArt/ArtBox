@@ -29,14 +29,9 @@ SMODS.Joker {
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        local blues = SMODS.find_card('j_artb_portal_blue')
-        if next(blues) then
-            for _, v in pairs(blues) do
-                if not SMODS.is_eternal(v) then
-                    SMODS.destroy_cards(v, {skip_calc = true, immediate = true})
-                    break
-                end
-            end
+        local oranges = SMODS.find_card('j_artb_portal_orange')
+        if not next(oranges) then
+            SMODS.destroy_cards(SMODS.find_card('j_artb_portal_blue'), {skip_calc = true, immediate = true})
         end
     end,
 

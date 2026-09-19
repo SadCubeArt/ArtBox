@@ -22,7 +22,7 @@ SMODS.Joker {
 
         local in_between = false
         local count = 0
-        if G.jokers then
+        if G.jokers and not card.fake_card then
             for _, v in pairs(G.jokers.cards) do
                 if v.config.center_key == 'j_artb_portal_orange' then
                     in_between = true
@@ -66,14 +66,9 @@ SMODS.Joker {
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        local oranges = SMODS.find_card('j_artb_portal_orange')
-        if next(oranges) then
-            for _, v in pairs(oranges) do
-                if not SMODS.is_eternal(v) then
-                    SMODS.destroy_cards(v, { skip_calc = true })
-                    break
-                end
-            end
+        local blues = SMODS.find_card('j_artb_portal_blue')
+        if not next(blues) then
+            SMODS.destroy_cards(SMODS.find_card('j_artb_portal_orange'), {skip_calc = true, immediate = true})
         end
     end,
 
