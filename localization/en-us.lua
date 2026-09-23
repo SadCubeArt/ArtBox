@@ -413,7 +413,7 @@ return {
                 text = { {
                     "If sold during {C:attention}blind{}",
                     "next hand has {X:mult,C:white}X3{} Mult",
-                },{
+                }, {
                     "at end of round",
                     "Spear is added back",
                     "{C:inactive}(must have room){}"
@@ -423,22 +423,24 @@ return {
             j_artb_portal_orange = {
                 name = 'Portal (Orange)',
                 text = { {
-                    "create {C:attention}Blue Portal{} when",
+                    "Create {C:chips}Blue Portal{} when",
                     "this Joker is obtained",
                     "{C:inactive}(Must have room){}"
-                },{
-                    "when either of the",
-                    "{C:attention}Portals{} is removed,",
-                    "the other one is too"
+                }, {
+                    "If theres no {C:chips}Blue Portal{}",
+                    "this Joker is destroyed"
                 } }
             },
 
             j_artb_portal_blue = {
                 name = 'Portal (Blue)',
                 text = { {
-                    "{X:mult,C:white}X#2#{} Mult for each Joker",
-                    "between {C:attention}Orange{} and {C:attention}Blue Portal{}",
+                    "{X:mult,C:white}X#2#{} Mult for each Joker between",
+                    "{C:attention}Orange Portal{} and {C:chips}Blue Portal{}",
                     "{C:inactive}(Currently: {}{X:mult,C:white}X#1#{}{C:inactive} Mult){}"
+                }, {
+                    "If theres no {C:attention}Orange Portal{}",
+                    "this Joker is destroyed"
                 } }
             },
 

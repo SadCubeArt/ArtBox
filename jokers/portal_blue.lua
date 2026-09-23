@@ -20,15 +20,27 @@ SMODS.Joker {
             info_queue[#info_queue + 1] = G.P_CENTERS.j_artb_portal_orange
         end
 
+        local first_portal = "none"
         local in_between = false
         local count = 0
         if G.jokers and not card.fake_card then
             for _, v in pairs(G.jokers.cards) do
                 if v.config.center_key == 'j_artb_portal_orange' then
-                    in_between = true
-                    count = 0
+                    if first_portal ~= "blue" then
+                        first_portal = "orange"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
                 elseif v == card then
-                    break
+                    if first_portal ~= "orange" then
+                        first_portal = "blue"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
                 elseif in_between then
                     count = count + card.ability.extra.mult_modifier
                 end
@@ -47,14 +59,26 @@ SMODS.Joker {
         local stg = card.ability.extra
 
         if context.joker_main then
+            local first_portal = "none"
             local in_between = false
             local count = 0
             for _, v in pairs(G.jokers.cards) do
                 if v.config.center_key == 'j_artb_portal_orange' then
-                    in_between = true
-                    count = 0
+                    if first_portal ~= "blue" then
+                        first_portal = "orange"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
                 elseif v == card then
-                    break
+                    if first_portal ~= "orange" then
+                        first_portal = "blue"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
                 elseif in_between then
                     count = count + card.ability.extra.mult_modifier
                 end
@@ -68,7 +92,7 @@ SMODS.Joker {
     remove_from_deck = function(self, card, from_debuff)
         local blues = SMODS.find_card('j_artb_portal_blue')
         if not next(blues) then
-            SMODS.destroy_cards(SMODS.find_card('j_artb_portal_orange'), {skip_calc = true, immediate = true})
+            SMODS.destroy_cards(SMODS.find_card('j_artb_portal_orange'), { skip_calc = true, immediate = true })
         end
     end,
 
