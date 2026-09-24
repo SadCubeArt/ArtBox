@@ -27,6 +27,7 @@ return {
             artb_lost = "Lost",
             artb_spored = "Spored",
             artb_shroom = "You cannot kill me in a way that matters",
+            artb_ranks_triggered = 'Ranks triggered: '
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
