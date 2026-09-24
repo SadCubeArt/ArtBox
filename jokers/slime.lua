@@ -1,5 +1,6 @@
 SMODS.Joker {
     key = 'slime',
+    rarity = 2,
     config = {
         extra = {
             cards_to_create = 2
@@ -7,6 +8,7 @@ SMODS.Joker {
     },
     pos = { x = 3, y = 0 },
     atlas = 'joker_atlas',
+    cost = 7,
     unlocked = true,
     discovered = true,
     blueprint_compat = false,
