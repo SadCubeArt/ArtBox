@@ -9,6 +9,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    artb_non_art = true,
 
     calculate = function(self, card, context)
         if context.setting_blind and not context.blueprint and G.jokers.cards[#G.jokers.cards] ~= card then

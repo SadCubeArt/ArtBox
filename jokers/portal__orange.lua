@@ -9,6 +9,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    artb_non_art = true,
 
     loc_vars = function(self, info_queue, card)
         if not card.fake_card then

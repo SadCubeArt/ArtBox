@@ -9,6 +9,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = false,
+    artb_non_art = true,
 
     calculate = function(self, card, context)
         if context.selling_self and G.GAME.blind and G.GAME.blind.in_blind then

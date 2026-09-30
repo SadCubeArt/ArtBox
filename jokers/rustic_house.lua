@@ -9,6 +9,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    artb_non_art = true,
 
     calculate = function(self, card, context)
         if context.evaluate_poker_hand and #context.full_hand >= 5 then

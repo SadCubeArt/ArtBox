@@ -15,6 +15,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
+    artb_non_art = true,
 
     loc_vars = function(self, info_queue, card)
         return {

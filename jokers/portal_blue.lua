@@ -9,6 +9,8 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+    artb_non_art = true,
+    
     config = {
         extra = {
             mult_modifier = 0.75,
