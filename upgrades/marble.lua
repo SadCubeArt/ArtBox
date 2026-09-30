@@ -50,26 +50,13 @@ SMODS.Enhancement({
 
   calculate = function(self, card, context)
     card.ability.extra.progress = card.ability.extra.progress or 0
-    if context.final_scoring_step and context.cardarea == G.play and not context.debuffed and card.ability.extra.progress < 4 then
-      G.E_MANAGER:add_event(Event({
-        trigger = 'after',
-        func = function()
-          card.ability.extra.progress = card.ability.extra.progress + 1
-          card:set_sprite_state("progress" .. card.ability.extra.progress)
-          card:juice_up()
-
-          if card.ability.extra.progress >= 4 then
-            card.ability.x_chips = 2
-          end
-          return true
-        end
-      }))
+    if context.final_scoring_step and context.cardarea == G.play then
+      ArtBox.chisel_marble(card)
     end
   end,
 })
 
 local card_isfaceref = Card.is_face
-
 function Card:is_face(from_boss)
   if self.debuff and not from_boss then return end
 

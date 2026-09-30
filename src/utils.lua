@@ -50,7 +50,7 @@ ArtBox.calculate = function(self, context)
     if context.final_scoring_step and G.GAME.artb_spears_to_trigger > 0 then
         local spear_effects = {}
         for i = 1, G.GAME.artb_spears_to_trigger do
-            spear_effects[#spear_effects+1] = { xmult = 3 }
+            spear_effects[#spear_effects + 1] = { xmult = 3 }
         end
         G.GAME.artb_spears_to_trigger = 0
         return SMODS.merge_effects(spear_effects)
@@ -73,5 +73,25 @@ ArtBox.calculate = function(self, context)
             end
         end
         G.GAME.artb_spears_sold = 0
+    end
+end
+
+function ArtBox.chisel_marble(card)
+    if SMODS.has_enhancement(card, 'm_artb_marble') and card.ability.extra.progress < 4 and not card.debuffed then
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            func = function()
+                card.ability.extra.progress = card.ability.extra.progress + 1
+                card:set_sprite_state("progress" .. card.ability.extra.progress)
+
+                if card.ability.extra.progress >= 4 then
+                    card.ability.x_chips = 2
+                end
+                return true
+            end
+        }))
+        SMODS.calculate_effect({ message = localize('artb_chiseled'), colour = G.C.ATTENTION }, card)
+        SMODS.calculate_context({ artb_marble_chiseled = card })
+        return true
     end
 end

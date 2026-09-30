@@ -23,6 +23,7 @@ return {
             artb_lost = "Lost",
             artb_spored = "Spored",
             artb_shroom = "You cannot kill me in a way that matters",
+            artb_chiseled = 'Chiseled',
 
             -- UI Labels
             artb_arts_crafts_pack = "Arts & Crafts Pack",
@@ -450,6 +451,23 @@ return {
                 } }
             },
 
+            j_artb_sculpted1 = {
+                name = 'Sculpted Joker',
+                text = {
+                    '{C:attention}Marble Cards{} permanently gain',
+                    '{C:chips}+#1#{} Chips when chiseled'
+                }
+            },
+
+            j_artb_sculpted2 = {
+                name = 'Sculpted Joker',
+                text = {
+                    {'{C:attention}Rankless Cards{} held in hand',
+                    'at end of round permanently gain {C:chips}+#1#{} Chips',},
+                    {'{C:attention}Rankless Cards{} held in hand',
+                    'at end of round are chiseled {C:attention}once{} if able'}
+                }
+            }
 
         },
         collectable = {
@@ -775,11 +793,13 @@ return {
             },
             v_artb_used_supplies = {
                 name = 'Used Supplies',
-                text = {
+                text = {{
+                    "{C:attention}+1{} consumable slot",
+                },{
                     "When a card is destroyed,",
-                    'get a {C:dark_edition}Negative{} {C:collectable}Collectable{} of its',
+                    'get a {C:collectable}Collectable{} of its',
                     '{C:attention}Edition{}, {C:attention}Seal{} and {C:attention}Enhancement{}',
-                },
+                },}
             },
         },
 
