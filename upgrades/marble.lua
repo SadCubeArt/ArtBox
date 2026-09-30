@@ -54,6 +54,15 @@ SMODS.Enhancement({
       ArtBox.chisel_marble(card)
     end
   end,
+
+  set_sprites = function(self, card, front)
+    G.E_MANAGER:add_event(Event({
+        func = function()
+            card:set_sprite_state("progress" .. card.ability.extra.progress)
+            return true;
+        end
+    }))
+  end
 })
 
 local card_isfaceref = Card.is_face
