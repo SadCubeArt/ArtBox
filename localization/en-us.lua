@@ -1,12 +1,11 @@
 return {
     misc = {
         dictionary = {
+            -- Messages
             artb_bonk = "Bonk!",
-            artb_collectable_shine = 'Enable Collectable Shine',
             artb_caught = "Caught!",
             artb_wow = "WOW!",
             artb_miss = "Miss!",
-            artb_arts_crafts_pack = "Arts & Crafts Pack",
             artb_plus_art = "+1 Art",
             artb_plus_tag = "+1 Tag",
             artb_wood = "Wood!",
@@ -14,10 +13,7 @@ return {
             artb_hungry = "Hungry",
             artb_fed = "Fed",
             artb_starved = "Starved :(",
-            artb_protoplanet = "Protoplanet",
             artb_stolen = "Stolen!",
-            artb_null_hand_toggle = "Toggle Null Hand",
-            artb_menu = "Toggle Custom Menu",
             artb_fill = "Fill!",
             artb_empty = "Empty",
             artb_fired = "Fired!",
@@ -27,7 +23,16 @@ return {
             artb_lost = "Lost",
             artb_spored = "Spored",
             artb_shroom = "You cannot kill me in a way that matters",
-            artb_ranks_triggered = 'Ranks triggered: '
+
+            -- UI Labels
+            artb_arts_crafts_pack = "Arts & Crafts Pack",
+            artb_protoplanet = "Protoplanet",
+            artb_ranks_triggered = 'Ranks triggered: ',
+
+            artb_null_hand_toggle = "Toggle Null Hand",
+            artb_menu = "Toggle Custom Menu",
+            artb_collectable_shine = 'Enable Collectable Shine',
+            artb_non_art_toggle = 'Toggle Non-Art Additions'
         },
         labels = {
             artb_ouroboros_seal = "Ouroboros Seal",
