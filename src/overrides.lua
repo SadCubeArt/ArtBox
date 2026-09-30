@@ -1,0 +1,8 @@
+local igo = Game.init_game_object
+Game.init_game_object = function(self)
+    local ret = igo(self)
+    ret.artb_recursives_used = 1
+    ret.artb_spears_sold = 0
+    ret.artb_spears_to_trigger = 0
+    return ret
+end
