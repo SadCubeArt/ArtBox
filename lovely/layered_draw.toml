@@ -23,3 +23,16 @@ end
 '''
 match_indent = true
 times = 1
+
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/card_draw.lua"]'''
+pattern = '''
+if edition.apply_to_float and self.children.floating_sprite then
+'''
+position = 'at'
+payload = '''
+if (edition.apply_to_float or self.config.center.edition_for_soul) and self.children.floating_sprite then
+'''
+match_indent = true
+times = 1

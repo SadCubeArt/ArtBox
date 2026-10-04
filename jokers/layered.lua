@@ -3,6 +3,7 @@ SMODS.Joker {
     pos = { x = 3, y = 7 },
     soul_pos = { x = 4, y = 7 },
     layered_soul_pos = { x = 5, y = 7 },
+    edition_for_soul = true,
     atlas = 'joker_atlas',
     unlocked = true,
     discovered = true,
@@ -23,7 +24,7 @@ SMODS.DrawStep {
             end
             if self.edition then
                 local edition = G.P_CENTERS[self.edition.key]
-                if edition.apply_to_float and self.children.layered_floating_sprite then
+                if (edition.apply_to_float or self.config.center.edition_for_soul) and self.children.layered_floating_sprite then
                     self.children.layered_floating_sprite:draw_shader(edition.shader, nil, nil, nil, self.children.center, scale_mod, rotate_mod)                    
                 end
             end
