@@ -17,3 +17,14 @@ function SMODS.add_to_pool(prototype_obj, args)
 
     return ret
 end
+
+local card_align_ref = Card.align
+function Card:align()
+    card_align_ref(self)
+
+    if self.children.layered_floating_sprite then 
+        self.children.layered_floating_sprite.T.y = self.T.y
+        self.children.layered_floating_sprite.T.x = self.T.x
+        self.children.layered_floating_sprite.T.r = self.T.r
+    end
+end

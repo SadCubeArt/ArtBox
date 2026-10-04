@@ -451,21 +451,15 @@ return {
                 } }
             },
 
-            j_artb_sculpted1 = {
-                name = 'Sculpted Joker',
-                text = {
-                    '{C:attention}Marble Cards{} permanently gain',
-                    '{C:chips}+#1#{} Chips when chiseled'
-                }
-            },
-
-            j_artb_sculpted2 = {
+            j_artb_sculpted = {
                 name = 'Sculpted Joker',
                 text = {
                     {'{C:attention}Rankless Cards{} held in hand',
-                    'at end of round permanently gain {C:chips}+#1#{} Chips',},
+                    'at end of round',
+                    'permanently gain {C:chips}+#1#{} Chips',},
                     {'{C:attention}Rankless Cards{} held in hand',
-                    'at end of round are chiseled {C:attention}once{} if able'}
+                    'at end of round',
+                    'are chiseled {C:attention}once{} if able'}
                 }
             }
 

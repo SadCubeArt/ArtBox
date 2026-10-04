@@ -1,0 +1,25 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 2
+
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/overrides.lua"]'''
+pattern = '''
+if self.children.back then self.children.back:remove() end
+'''
+position = 'before'
+payload = '''
+if _center.layered_soul_pos or _center[G.SETTINGS.colourblind_option and 'hc_soul_atlas' or 'lc_soul_atlas'] or _center.soul_atlas then
+	if self.children.layered_floating_sprite then self.children.layered_floating_sprite:remove() end
+    local atlas_key = _center[G.SETTINGS.colourblind_option and 'hc_soul_atlas' or 'lc_soul_atlas'] or _center.soul_atlas or _center[G.SETTINGS.colourblind_option and 'hc_atlas' or 'lc_atlas'] or _center.atlas or _center.set
+    self.children.layered_floating_sprite = SMODS.create_sprite(self.T.x, self.T.y, self.T.w, self.T.h, atlas_key, _center.layered_soul_pos or { x = 0, y = 0 }, (_center.layered_soul_pos or {}).sprite_args)
+    self.children.layered_floating_sprite.role.draw_major = self
+    self.children.layered_floating_sprite.states.hover.can = false
+    self.children.layered_floating_sprite.states.click.can = false
+end
+
+'''
+match_indent = true
+times = 1

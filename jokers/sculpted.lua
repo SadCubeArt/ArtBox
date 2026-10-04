@@ -4,7 +4,7 @@ SMODS.Joker {
             chips = 10,
         }
     },
-    key = "sculpted2",
+    key = "sculpted",
     rarity = 1,
     pos = { x = 2, y = 5 },
     atlas = 'joker_atlas',
@@ -30,7 +30,7 @@ SMODS.Joker {
                         return true;
                     end
                 }))
-                SMODS.calculate_effect({ message = localize('k_upgrade_ex'), colour = G.C.CHIPS },context.other_card)
+                SMODS.calculate_effect({ message = localize('k_upgrade_ex'), colour = G.C.CHIPS }, context.other_card)
 
                 if ArtBox.chisel_marble(context.other_card) then
                     G.E_MANAGER:add_event(Event({
@@ -40,6 +40,7 @@ SMODS.Joker {
                         end
                     }))
                 end
+                return nil, true
             end
         end
     end
