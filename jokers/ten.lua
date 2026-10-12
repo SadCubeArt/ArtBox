@@ -21,11 +21,17 @@ SMODS.Joker {
 
         local built_string = localize('artb_ranks_triggered')
         if SMODS.table_size(card.ability.extra.ranks) > 0 then
-            local i = 0
+            local sorted_ranks = {}
             for _, v in pairs(card.ability.extra.ranks) do
+                table.insert(sorted_ranks, v)
+            end
+            table.sort(sorted_ranks, function(a, b) return SMODS.Ranks[a].sort_id < SMODS.Ranks[b].sort_id end)
+
+            local i = 0
+            for _, v in pairs(sorted_ranks) do
                 i = i + 1
                 built_string = built_string .. localize(v, 'ranks')
-                if i < SMODS.table_size(card.ability.extra.ranks) then
+                if i < SMODS.table_size(sorted_ranks) then
                     built_string = built_string .. ', '
                     if string.len(built_string) > 30 then
                         table.insert(nodes, {
