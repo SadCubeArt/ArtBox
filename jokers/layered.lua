@@ -2,7 +2,7 @@ SMODS.Joker {
     key = 'layered',
     config = {
         extra = {
-            rank_goal = 3,
+            rank_goal = 10,
             ranks = {},
             tag = 'tag_artb_recursive'
         }
