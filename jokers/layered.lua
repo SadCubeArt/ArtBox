@@ -69,7 +69,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.individual and not context.end_of_round and context.cardarea == G.play and not card.ability.extra.ranks[context.other_card:get_id()] then
+        if context.individual and not context.end_of_round and context.cardarea == G.play and not SMODS.has_no_rank(context.other_card) and not card.ability.extra.ranks[context.other_card:get_id()] then
             card.ability.extra.ranks[context.other_card:get_id()] = context.other_card.base.value
             
             if SMODS.table_size(card.ability.extra.ranks) >= card.ability.extra.rank_goal then

@@ -54,7 +54,7 @@ return {
                 text = {
                     "When any playing card is {C:attention}destroyed{},",
                     "gains {C:chips}+#1#{} Chips, {C:mult}+#3#{} Mult, or {X:mult,C:white}X#5#{} Mult",
-                    "{C:inactive}(Currently: {C:chips}#2#{} {C:inactive}Chips/{C:mult}#4#{} {C:inactive}Mult/{X:mult,C:white}X#6#{} {C:inactive}Mult)"
+                    "{C:inactive}(Currently: {C:chips}+#2#{} {C:inactive}Chips/{C:mult}+#4#{} {C:inactive}Mult/{X:mult,C:white}X#6#{} {C:inactive}Mult)"
                 }
             },
 
@@ -69,12 +69,14 @@ return {
 
             j_artb_mitosis = {
                 name = 'Mitosis',
-                text = {
+                text = { {
                     "{C:mult}+#1#{} Mult",
+                },
+                {
                     "When {C:attention}blind{} is selected,",
                     "creates a copy of this Joker",
                     "{C:inactive}(Must have room){}",
-                }
+                } }
             },
 
             j_artb_bat = {
@@ -94,11 +96,11 @@ return {
                     "{C:clubs}Club{} suit give",
                     "{C:mult}+#2#{} Mult when scored",
                 },
-                    {
-                        "Played cards with",
-                        "{C:spades}Spade{} suit give",
-                        "{C:chips}+#1#{} Chips when scored",
-                    } }
+                {
+                    "Played cards with",
+                    "{C:spades}Spade{} suit give",
+                    "{C:chips}+#1#{} Chips when scored",
+                } }
             },
 
             j_artb_clawmachine = {
@@ -141,16 +143,16 @@ return {
             j_artb_minimalism = {
                 name = 'Minimalism',
                 text = {
-                    "Retrigger all scored cards",
-                    "if played hand has 3",
-                    "or less scored cards",
+                    "{C:attention}Retrigger{} all scored cards",
+                    "if played hand has",
+                    "{C:attention}#1# or less{} scored cards",
                 }
             },
 
             j_artb_wooden_joker = {
                 name = 'Wooden Joker',
                 text = {
-                    "Retrigger last card",
+                    "{C:attention}Retrigger{} last card",
                     "held in hand {C:attention}#1#{} times",
                 }
             },
@@ -172,7 +174,7 @@ return {
                     "This Joker gains {C:mult}+#1#{} Mult",
                     "if played hand is",
                     "{C:attention}Three of a Kind{}",
-                    "{C:inactive}(Currently: {C:mult}#2#{} {C:inactive}Mult)"
+                    "{C:inactive}(Currently: {C:mult}+#2#{} {C:inactive}Mult)"
                 }
             },
 
@@ -183,11 +185,11 @@ return {
                     "in the same hand,",
                     "destroy all {C:attention}9{}s",
                 },
-                    {
-                        "Scored {C:attention}7{}s give {C:mult}+#2#{} Mult for",
-                        "each {C:attention}9{} destroyed by this card",
-                        "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
-                    } }
+                {
+                    "Scored {C:attention}7{}s give {C:mult}+#2#{} Mult for",
+                    "each {C:attention}9{} destroyed by this card",
+                    "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
+                } }
             },
 
             j_artb_collector = {
@@ -198,42 +200,42 @@ return {
                     "to a {C:attention}Joker{} or {C:attention}Consumable{}",
                     "to the right",
                 },
-                    {
-                        "Gives {X:mult,C:white}X#1#{} Mult times",
-                        "total {C:attention}sell value{} of all owned",
-                        "{C:attention}Jokers{} and {C:attention}Consumables{}",
-                        "{C:inactive}(Currently: {X:mult,C:white}X#2#{} {C:inactive}Mult)"
-                    } }
+                {
+                    "Gives {X:mult,C:white}X#1#{} Mult times",
+                    "total {C:attention}sell value{} of all owned",
+                    "{C:attention}Jokers{} and {C:attention}Consumables{}",
+                    "{C:inactive}(Currently: {X:mult,C:white}X#2#{} {C:inactive}Mult)"
+                } }
             },
 
             j_artb_origami = {
                 name = 'Origami',
-                text = { {
-                    "Create an {C:attention}Art{} card",
+                text = {
+                    "Create an {C:art}Art{} card",
                     "When {C:attention}Blind{} is selected",
                     "{C:inactive}(Must have room){}"
-                } }
+                }
             },
 
             j_artb_clownfish = {
                 name = 'Clownfish',
-                text = { {
+                text = {
                     "{X:mult,C:white}X#2#{} Mult",
                     "when round ends",
-                    "dies if no cards",
-                    "were sold this round",
-                    "{C:inactive}(Currently: #1#){}"
-                } }
+                    "{C:red}Dies{} if no cards",
+                    "were {C:money}sold{} this round",
+                    "{C:inactive}(Currently: {V:1}#1#{C:inactive})"
+                }
             },
 
             j_artb_energy_drink = {
                 name = 'Energy Drink',
-                text = { {
+                text = {
                     "Retriggers {C:attention}Joker{}",
                     "to the right",
-                    "Consumed after",
+                    "for the next",
                     "{C:attention}#2#{} round(s)"
-                } }
+                }
             },
 
             j_artb_lego_joker = {
@@ -244,20 +246,20 @@ return {
                     "has one {C:attention}stacks{} them",
                     "{C:inactive}(Up to {C:attention}3{} {C:inactive}Seals stacked){}",
                 },
-                    {
-                        "Adds a {C:collectable}Brick Seal Collectable{}",
-                        "when this Joker is obtained",
-                        "{C:inactive}(Must have room){}"
-                    } }
+                {
+                    "Adds a {C:collectable}Brick Seal Collectable{}",
+                    "when this Joker is obtained",
+                    "{C:inactive}(Must have room){}"
+                } }
             },
 
             j_artb_ascii = {
                 name = 'Ascii',
-                text = { {
+                text = {
                     "Each card in hand gives",
                     "{C:mult}+#1#{} Mult for its and every",
                     "unique rank to the left"
-                } }
+                }
             },
 
             j_artb_gold_plating = {
@@ -266,28 +268,28 @@ return {
                     "Gains {C:money}$#1#{} of {C:attention}sell value{}",
                     "at end of round"
                 },
-                    {
-                        "Sell this Joker",
-                        "to give its {C:attention}sell value{}",
-                        "to a Joker to the right"
-                    } }
+                {
+                    "Sell this Joker",
+                    "to give its {C:attention}sell value{}",
+                    "to a Joker to the right"
+                } }
             },
 
             j_artb_stained_glass = {
                 name = 'Stained Glass',
-                text = { {
+                text = {
                     "{C:attention}Glass Cards{} create an",
-                    "{C:attention}Art card{} when scored, and a",
+                    "{C:art}Art{} card when scored, and a",
                     "{C:attention}Creative Tag{} when shattered"
-                } }
+                }
             },
 
             j_artb_paint_chips = {
                 name = 'Paint Chips',
-                text = { {
+                text = {
                     "{X:chips,C:white}X#2#{} Chips",
                     "{X:mult,C:white}X#1#{} Mult",
-                } }
+                }
             },
 
             j_artb_heist = {
@@ -297,122 +299,124 @@ return {
                     "steals {C:attention}sell value{} of",
                     "the Joker to the right"
                 },
-                    {
-                        "gives Mult equal to three",
-                        "times this Jokers {C:attention}sell value{}",
-                        "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
-                    } }
+                {
+                    "Gives Mult equal to three",
+                    "times this Jokers {C:attention}sell value{}",
+                    "{C:inactive}(Currently: {C:mult}+#1#{} {C:inactive}Mult)"
+                } }
             },
 
             j_artb_null_pointer = {
                 name = 'Null Pointer',
-                text = { {
+                text = {
                     "Fills all empty consumable",
                     "slots with random rankless",
                     "{C:collectable}Collectable enhancements{}",
                     "when {C:attention}obtained{} or {C:attention}sold{}"
-                } }
+                }
             },
 
             j_artb_card_binder = {
                 name = 'Card Binder',
-                text = { {
+                text = {
                     "{C:attention}+#1#{} hand size when",
                     "not in a {C:attention}Blind{}"
-                } }
+                }
             },
 
             j_artb_paint_bucket = {
                 name = 'Paint Bucket',
-                text = { {
+                text = {
                     "For the next {C:attention}#1#{} hands",
                     "give one random {C:attention}Enhancement{}",
                     "to all scored cards with same",
                     "{C:attention}Rank{} as first scoring card"
-                } }
+                }
             },
 
             j_artb_sparkledog = {
                 name = 'Sparkledog',
-                text = { {
+                text = {
                     "{C:chips}#1#{} Chips for each",
                     "unique {C:attention}enhancement{}, {C:attention}seal{}",
                     "and {C:attention}edition{} in {C:attention}full deck{}",
-                    "{C:inactive}(Currently: {C:chips}#2#{} {C:inactive}Chips)"
-                } }
+                    "{C:inactive}(Currently: {C:chips}+#2#{} {C:inactive}Chips)"
+                }
             },
 
             j_artb_bug = {
-                name = 'Hey Check Out This Cool Bug',
-                text = { {
-                    "{C:attention}???{} when scored hand contains {C:attention}???{}",
-                } }
+                name = {'Hey Check Out', 'This Cool Bug'},
+                text = {
+                    "{C:attention}???{} when scored hand",
+                    "contains {C:attention}???{}",
+                }
             },
 
             j_artb_recursion = {
                 name = 'Recursion',
-                text = { {
+                text = {
                     "Creates an {C:attention}Recursive Tag{}",
                     "when {C:attention}Boss Blind{} is defeated"
-                } }
+                }
             },
 
             j_artb_claymation = {
                 name = 'Claymation',
-                text = { {
+                text = {
                     "Draw a {C:attention}Clay Card{}",
                     "From your {C:attention}deck{}",
                     "at the begining of round"
-                } }
+                }
             },
 
             j_artb_stained_joker = {
                 name = 'Stained Joker',
-                text = { {
+                text = {
                     "If {C:attention}first discard{} of round",
                     "has only {C:attention}1{} card, enhance",
                     "it into a {C:attention}Stained Card{}",
-                } }
+                }
             },
 
             j_artb_scalper = {
                 name = 'Scalper',
-                text = { {
-                    "When entering shop",
-                    "Sets money to {C:money}$0{}",
+                text = {
+                    "When entering shop,",
+                    "money is set to {C:money}$0{}",
                     "and creates a",
                     "{C:collectable}Joker Collectable{}",
                     "for every {C:money}$#1#{} lost"
-                } }
+                }
             },
 
             j_artb_backrooms = {
                 name = 'Backrooms',
-                text = { {
+                text = {
                     "Jokers in the {C:attention}Shop{}",
                     "are {C:attention}#1#X{} more likely",
                     "to be {C:dark_edition}Negative{}",
                     "{C:inactive}Don't get lost...{}"
-                } }
+                }
             },
 
             j_artb_funguy = {
                 name = 'Funguy',
-                text = { {
-                    "When card is {C:attention}destroyed{}",
-                    "{C:attention}#1#{} cards in hand gain",
-                    "its {C:attention}extra{} Chips and Mult"
-                } }
+                text = {
+                    "When a playing card is {C:red}destroyed{},",
+                    "{C:attention}#1#{} playing cards in hand gain",
+                    "the destroyed card's",
+                    "{C:attention}bonus{} {C:chips}Chips{} and {C:mult}Mult"
+                }
             },
 
             j_artb_slime = {
                 name = 'Slime Joker',
-                text = { {
+                text = {
                     "If {C:attention}first hand{} of round",
                     "has only {C:attention}1{} card, it's destroyed,",
                     "and {C:attention}#1#{} copies of it with rank",
                     "lowered by 1 are added to the {C:attention}deck{} "
-                } }
+                }
             },
 
             j_artb_spear = {
@@ -420,10 +424,11 @@ return {
                 text = { {
                     "If sold during {C:attention}blind{}",
                     "next hand has {X:mult,C:white}X3{} Mult",
-                }, {
-                    "at end of round",
-                    "Spear is added back",
-                    "{C:inactive}(must have room){}"
+                },
+                {
+                    "At end of round after {C:money}selling{},",
+                    "another {C:attention}Rho Spear{} is created",
+                    "{C:inactive}(Must have room){}"
                 } }
             },
 
@@ -453,16 +458,44 @@ return {
 
             j_artb_sculpted = {
                 name = 'Sculpted Joker',
+                text = { {
+                    '{C:attention}Rankless Cards{} held in hand',
+                    'at end of round',
+                    'permanently gain {C:chips}+#1#{} Chips',
+                }, {
+                    '{C:attention}Rankless Cards{} held in hand',
+                    'at end of round',
+                    'are chiseled {C:attention}once{} if able'
+                } }
+            },
+
+            j_artb_rustic_house = {
+                name = 'Rustic House',
                 text = {
-                    {'{C:attention}Rankless Cards{} held in hand',
-                    'at end of round',
-                    'permanently gain {C:chips}+#1#{} Chips',},
-                    {'{C:attention}Rankless Cards{} held in hand',
-                    'at end of round',
-                    'are chiseled {C:attention}once{} if able'}
+                    '{C:attention}Full House{} can be created',
+                    'with {C:attention}rankless{} cards',
+                    '{C:inactive,s:0.8}(ex. Q Q Q Stone Marble)'
+                }
+            },
+
+            j_artb_layered = {
+                name = 'Layered Joker',
+                text = {
+                    'After scoring {C:attention}#1#{}',
+                    'unique ranks, create',
+                    'a {C:attention}#2#{}',
+                    '{C:inactive,s:0.8}(Ranks reset after trigger)'
+                }
+            },
+
+            j_artb_ten = {
+                name = 'Joker 10',
+                text = {
+                    '{C:mult}+#1#{} Mult each time',
+                    'any non-face rank is played',
+                    'for the {C:attention}first time{} this ante'
                 }
             }
-
         },
         collectable = {
             c_artb_joker_collectable = {
@@ -725,7 +758,7 @@ return {
                     "No rank or suit,",
                     "When this card is {C:attention}discarded{},",
                     "{C:green}#1# in #2#{} chance",
-                    "to create an {C:attention}Art card{},",
+                    "to create an {C:art}Art{} card,",
                     "{C:green}#3# in #4#{} chance",
                     "to create a {C:attention}Creative tag{}",
                 }
@@ -848,7 +881,7 @@ return {
                 name = "Arts and Crafts Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:be5e6e)}Art{} cards to use",
+                    "{C:art}Art{} cards to use",
                 },
             },
 
@@ -856,7 +889,7 @@ return {
                 name = "Arts and Crafts Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:be5e6e)}Art{} cards to use",
+                    "{C:art}Art{} cards to use",
                 },
             },
 
@@ -864,7 +897,7 @@ return {
                 name = "Jumbo Arts and Crafts Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:be5e6e)}Art{} cards to use",
+                    "{C:art}Art{} cards to use",
                 },
             },
 
@@ -872,7 +905,7 @@ return {
                 name = "Mega Arts and Crafts Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to {C:attention}#2#",
-                    "{C:be5e6e)}Art{} cards to use",
+                    "{C:art}Art{} cards to use",
                 },
             },
         },

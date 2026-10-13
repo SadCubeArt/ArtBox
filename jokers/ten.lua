@@ -68,7 +68,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.individual and not context.end_of_round and context.cardarea == G.play and not card.ability.extra.ranks[context.other_card:get_id()] and not context.other_card:is_face() then
+        if context.individual and not context.end_of_round and context.cardarea == G.play and not SMODS.has_no_rank(context.other_card) and not card.ability.extra.ranks[context.other_card:get_id()] and not context.other_card:is_face() then
             card.ability.extra.ranks[context.other_card:get_id()] = context.other_card.base.value
             return {
                 mult = card.ability.extra.mult
