@@ -506,7 +506,15 @@ return {
                     '{C:attention}Resets{} on successful probability',
                     '{C:inactive}(Currently: {X:green,C:white}X#1#{C:inactive})'
                 }
-            }
+            },
+
+            j_artb_manga = {
+                name = 'Manga Joker',
+                text = {
+                    '{C:attention}Rescore{} all played cards',
+                    'in {C:attention}reverse{} order'
+                }
+            },
         },
         collectable = {
             c_artb_joker_collectable = {
