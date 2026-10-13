@@ -579,7 +579,7 @@ return {
             c_artb_art_paper = {
                 name = 'Paper',
                 text = {
-                    "Enchances {C:attention}#1#{}",
+                    "Enhances {C:attention}#1#{}",
                     "selected cards to",
                     "{C:attention}Pinata Cards{}",
                 }
@@ -587,7 +587,7 @@ return {
             c_artb_art_art_block = {
                 name = 'Art Block',
                 text = {
-                    "Enchances {C:attention}#1#{}",
+                    "Enhances {C:attention}#1#{}",
                     "selected card to",
                     "{C:attention}Stained Card{}",
                 }
@@ -659,7 +659,7 @@ return {
             c_artb_art_carving = {
                 name = 'Carving',
                 text = {
-                    "Enchances {C:attention}#1#{}",
+                    "Enhances {C:attention}#1#{}",
                     "selected playing card to",
                     "{C:attention}Wood Card{}",
                 }
@@ -688,7 +688,7 @@ return {
             c_artb_art_sculpting = {
                 name = 'Sculpting',
                 text = {
-                    "Enchances {C:attention}#1#{}",
+                    "Enhances {C:attention}#1#{}",
                     "selected playing card to",
                     "{C:attention}Marble Card{}",
                 }
@@ -716,7 +716,7 @@ return {
             c_artb_art_pottery = {
                 name = 'Pottery',
                 text = {
-                    "Enchances {C:attention}#1#{}",
+                    "Enhances {C:attention}#1#{}",
                     "selected cards to",
                     "{C:attention}Clay Cards{}",
                 }
