@@ -24,6 +24,7 @@ return {
             artb_spored = "Spored",
             artb_shroom = "You cannot kill me in a way that matters",
             artb_chiseled = 'Chiseled',
+            artb_lucky = 'Lucky!',
 
             -- UI Labels
             artb_arts_crafts_pack = "Arts & Crafts Pack",
@@ -494,6 +495,16 @@ return {
                     '{C:mult}+#1#{} Mult each time',
                     'any non-face rank is played',
                     'for the {C:attention}first time{} this ante'
+                }
+            },
+
+            j_artb_thirteen = {
+                name = 'Lucky 13',
+                text = {
+                    '{X:green,C:white}X#2#{} all listed probabilities',
+                    'for every {C:attention}failed{} probability',
+                    '{C:attention}Resets{} on successful probability',
+                    '{C:inactive}(Currently: {X:green,C:white}X#1#{C:inactive})'
                 }
             }
         },
