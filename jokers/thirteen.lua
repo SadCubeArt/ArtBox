@@ -3,7 +3,7 @@ SMODS.Joker {
     config = {
         extra = {
             prob = 1,
-            multiplier = 2
+            gain = 1
         }
     },
     rarity = 1,
@@ -17,7 +17,7 @@ SMODS.Joker {
     artb_non_art = true,
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.prob, card.ability.extra.multiplier } }
+        return { vars = { card.ability.extra.prob, card.ability.extra.gain } }
     end,
 
     calculate = function(self, card, context)
@@ -32,8 +32,7 @@ SMODS.Joker {
                 SMODS.scale_card(card, {
                     ref_table = card.ability.extra,
                     ref_value = 'prob',
-                    scalar_value = 'multiplier',
-                    operation = 'X'
+                    scalar_value = 'gain',
                 })
             end
         end

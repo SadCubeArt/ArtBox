@@ -501,7 +501,7 @@ return {
             j_artb_thirteen = {
                 name = 'Lucky 13',
                 text = {
-                    '{X:green,C:white}X#2#{} all listed probabilities',
+                    '{X:green,C:white}+X#2#{} all listed probabilities',
                     'for every {C:attention}failed{} probability',
                     '{C:attention}Resets{} on successful probability',
                     '{C:inactive}(Currently: {X:green,C:white}X#1#{C:inactive})'
