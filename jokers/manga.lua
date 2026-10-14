@@ -15,20 +15,29 @@ SMODS.Joker {
     perishable_compat = true,
 
     calculate = function(self, card, context)
-        -- Taken from Devil's Machine from the Wormhole Mod
+        -- Derived from Devil's Machine from the Wormhole Mod
         if (not card.ability.extra.stop) and context.individual and context.cardarea == G.play then
             if context.other_card == context.scoring_hand[#context.scoring_hand] then
-                return {
-                    func = function()
-                        SMODS.calculate_effect({ message = localize('k_again_ex') }, card)
-                        for i = #context.scoring_hand, 1, -1 do
-                            local passed_context = context
-                            card.ability.extra.stop = true
-                            SMODS.score_card(context.scoring_hand[i], passed_context)
-                        end
-                        card.ability.extra.stop = false
+                local all_dark = true
+                for _, v in pairs(context.scoring_hand) do
+                    if not v:is_suit('Clubs') and not v:is_suit('Spades') then
+                        all_dark = false
+                        break
                     end
-                }
+                end
+                if all_dark then
+                    return {
+                        func = function()
+                            SMODS.calculate_effect({ message = localize('k_again_ex') }, card)
+                            for i = #context.scoring_hand, 1, -1 do
+                                local passed_context = context
+                                card.ability.extra.stop = true
+                                SMODS.score_card(context.scoring_hand[i], passed_context)
+                            end
+                            card.ability.extra.stop = false
+                        end
+                    }
+                end
             end
         end
     end,

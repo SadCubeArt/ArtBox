@@ -512,7 +512,8 @@ return {
                 name = 'Manga Joker',
                 text = {
                     '{C:attention}Rescore{} all played cards',
-                    'in {C:attention}reverse{} order'
+                    'in {C:attention}reverse{} order if all',
+                    'played cards are {C:spades}Da{C:clubs}rk{} suits'
                 }
             },
         },
