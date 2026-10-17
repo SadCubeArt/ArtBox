@@ -23,7 +23,7 @@ SMODS.Joker {
                 if next(context.poker_hands['Pair']) and #rankless >= 3 or next(context.poker_hands['Three of a Kind']) and #rankless >= 2  then
                     local poker_hands = context.poker_hands
                     local original_hand = next(context.poker_hands['Three of a Kind']) and context.poker_hands['Three of a Kind'] or context.poker_hands['Pair']
-                    poker_hands['Full House'] = SMODS.merge_lists(rankless, original_hand)
+                    poker_hands['Full House'] = {SMODS.merge_lists(rankless, original_hand)}
                     return {
                         replace_scoring_name = 'Full House',
                         replace_poker_hands = poker_hands
