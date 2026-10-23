@@ -38,7 +38,7 @@ SMODS.Joker {
                             n = G.UIT.R,
                             config = { align = 'cm', padding = 0.06 },
                             nodes = {
-                                {n = G.UIT.T, config = { colour = G.C.TEXT_INACTIVE, scale = 0.26, text = built_string }}
+                                {n = G.UIT.T, config = { colour = G.C.UI.TEXT_INACTIVE, scale = 0.26, text = built_string }}
                             }
                         })
                         built_string = ''
@@ -53,7 +53,7 @@ SMODS.Joker {
             n = G.UIT.R,
             config = { align = 'cm', padding = 0.06 },
             nodes = {
-                {n = G.UIT.T, config = { colour = G.C.TEXT_INACTIVE, scale = 0.26, text = built_string }}
+                {n = G.UIT.T, config = { colour = G.C.UI.TEXT_INACTIVE, scale = 0.26, text = built_string }}
             }
         })
                             
