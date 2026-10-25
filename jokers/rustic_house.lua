@@ -1,9 +1,9 @@
 SMODS.Joker {
     key = "rustic_house",
-    rarity = 1,
+    rarity = 2,
     pos = { x = 2, y = 3 },
     atlas = 'joker_atlas',
-    cost = 5,
+    cost = 6,
     unlocked = true,
     discovered = true,
     blueprint_compat = false,

@@ -7,6 +7,8 @@ SMODS.Joker {
             tag = 'tag_artb_recursive'
         }
     },
+    rarity = 3,
+    cost = 7,
     pos = { x = 3, y = 7 },
     soul_pos = { x = 4, y = 7 },
     layered_soul_pos = { x = 5, y = 7 },

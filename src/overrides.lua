@@ -32,7 +32,7 @@ end
 local hide_from_collection_ref = SMODS.hide_from_collection
 function SMODS.hide_from_collection(prototype_obj, args)
     local ret = hide_from_collection_ref(prototype_obj, args)
-    if prototype_obj.artb_non_art and ArtBox_config.non_art then
+    if prototype_obj.artb_non_art and not ArtBox_config.non_art then
         ret = true
     end
     return ret

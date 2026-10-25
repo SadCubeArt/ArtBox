@@ -492,9 +492,9 @@ return {
             j_artb_ten = {
                 name = 'Joker 10',
                 text = {
-                    '{C:mult}+#1#{} Mult each time',
-                    'any non-face rank is played',
-                    'for the {C:attention}first time{} this ante'
+                    '{C:attention}first time{} each non-face',
+                    'rank is scored in an ante',
+                    'it gives {C:mult}+#1#{} Mult',
                 }
             },
 
