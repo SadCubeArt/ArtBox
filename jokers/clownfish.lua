@@ -2,8 +2,8 @@ SMODS.Joker {
     key = "clownfish",
     config = {
       extra = {
-        fed="hungry",
-        x_mult=2
+        fed = false,
+        x_mult = 2
       }
     },
     rarity = 1,
@@ -15,12 +15,16 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
+    artb_non_art = true,
 
     loc_vars = function(self, info_queue, card)
         return {
           vars = {
-            card.ability.extra.fed,
-            card.ability.extra.x_mult
+            card.ability.extra.fed and localize('artb_fed') or localize('artb_hungry'),
+            card.ability.extra.x_mult,
+            colours = {
+              card.ability.extra.fed and G.C.GREEN or G.C.RED
+            }
           }
         }
     end,
@@ -28,8 +32,8 @@ SMODS.Joker {
     calculate = function(self, card, context)
 
         if context.end_of_round and context.cardarea == G.jokers and not context.blueprint and not context.retrigger_joker then
-          if card.ability.extra.fed=="fed" then
-            card.ability.extra.fed="hungry"
+          if card.ability.extra.fed then
+            card.ability.extra.fed = false
             return {
                 message = localize('artb_hungry')
             }
@@ -41,8 +45,8 @@ SMODS.Joker {
           end
         end
 
-        if context.selling_card and not context.blueprint and card.ability.extra.fed=="hungry"  then
-            card.ability.extra.fed="fed"
+        if context.selling_card and not context.blueprint and not card.ability.extra.fed  then
+            card.ability.extra.fed = true
             return {
                 message = localize('artb_fed')
             }

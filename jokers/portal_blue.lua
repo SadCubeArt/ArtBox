@@ -1,0 +1,104 @@
+SMODS.Joker {
+    key = 'portal_blue',
+    rarity = 3,
+    pos = { x = 6, y = 3 },
+    atlas = 'joker_atlas',
+    cost = 8,
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    artb_non_art = true,
+    
+    config = {
+        extra = {
+            mult_modifier = 0.75,
+        }
+    },
+
+    loc_vars = function(self, info_queue, card)
+        if not card.fake_card then
+            info_queue[#info_queue + 1] = G.P_CENTERS.j_artb_portal_orange
+        end
+
+        local first_portal = "none"
+        local in_between = false
+        local count = 0
+        if G.jokers and not card.fake_card then
+            for _, v in pairs(G.jokers.cards) do
+                if v.config.center_key == 'j_artb_portal_orange' then
+                    if first_portal ~= "blue" then
+                        first_portal = "orange"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
+                elseif v == card then
+                    if first_portal ~= "orange" then
+                        first_portal = "blue"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
+                elseif in_between then
+                    count = count + card.ability.extra.mult_modifier
+                end
+            end
+        end
+
+        return {
+            vars = {
+                count + 1,
+                card.ability.extra.mult_modifier,
+            }
+        }
+    end,
+
+    calculate = function(self, card, context)
+        local stg = card.ability.extra
+
+        if context.joker_main then
+            local first_portal = "none"
+            local in_between = false
+            local count = 0
+            for _, v in pairs(G.jokers.cards) do
+                if v.config.center_key == 'j_artb_portal_orange' then
+                    if first_portal ~= "blue" then
+                        first_portal = "orange"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
+                elseif v == card then
+                    if first_portal ~= "orange" then
+                        first_portal = "blue"
+                        in_between = true
+                        count = 0
+                    else
+                        break
+                    end
+                elseif in_between then
+                    count = count + card.ability.extra.mult_modifier
+                end
+            end
+            return {
+                xmult = count + 1
+            }
+        end
+    end,
+
+    remove_from_deck = function(self, card, from_debuff)
+        local blues = SMODS.find_card('j_artb_portal_blue')
+        if not next(blues) then
+            SMODS.destroy_cards(SMODS.find_card('j_artb_portal_orange'), { skip_calc = true, immediate = true })
+        end
+    end,
+
+    in_pool = function(self, args)
+        return false
+    end
+}
