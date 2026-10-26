@@ -3,12 +3,12 @@
 	"name": "ArtBox",
 	"display_name": "ArtBox",
 	"author": ["SadCube. theAstra"],
-	"description": "An art themed mod adding all kinds of stuff! Especially new ways of modifying playing cards. Additional coding by theAstra, if you see anything in code that looks professional its probably him. And special thanks to Cebee for making wiki page for the mod, and the challenge idea! ^^",
+	"description": "An art themed mod adding all kinds of stuff! Especially new ways of modifying playing cards. Additional coding by theAstra, if you see anything in code that looks professional its probably him. And special thanks to Abbie for making wiki page for the mod, and the challenge idea! ^^",
 	"prefix": "artb",
 	"main_file": "ArtBox.lua",
 	"priority": 0,
 	"badge_colour": "14b3ad",
-	"version": "0.8.0",
+	"version": "0.8.1",
 	"dependencies": [
 		"Steamodded (>=26.829.0)"
 	],
