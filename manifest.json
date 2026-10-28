@@ -1,7 +1,7 @@
 {
 	"name": "ArtBox",
 	"description": "An art themed mod adding all kinds of stuff! Especially new ways of modifying playing cards.",
-	"version_number": "0.8.2",
+	"version_number": "0.8.3",
 	"website_url": "https://github.com/SadCubeArt/ArtBox",
 	"dependencies": [
 		"Steamodded-Steamodded-26.829.0"
