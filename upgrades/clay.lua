@@ -56,13 +56,13 @@ SMODS.Enhancement({
       end
     end
 
-    if context.final_scoring_step and card.ability.extra.fired == false and context.cardarea == G.hand and SMODS.last_hand_oneshot then
+    if context.after and card.ability.extra.fired == false and context.cardarea == G.hand and SMODS.last_hand_oneshot then
       card.ability.perma_mult = card.ability.perma_mult * 2
+      card.ability.extra.fired = true
       G.E_MANAGER:add_event(Event({
         trigger = 'before',
         func = function()
           card:set_sprite_state("fired")
-          card.ability.extra.fired = true
           return true;
         end
       }))
