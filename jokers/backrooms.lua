@@ -63,7 +63,6 @@ SMODS.Joker {
         end
 
         if context.modify_weights and context.pool_types['Edition'] and context.args and context.args.seed == 'edi1' then
-            print(context.args)
             context.pool['e_negative'].weight = context.pool['e_negative'].weight * card.ability.extra.negative_odds
         end
     end,
