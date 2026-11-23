@@ -25,7 +25,7 @@ SMODS.Joker {
     end,
 
     add_to_deck = function(self, card, from_debuff)
-      if not G.GAME.blind.in_blind and card.ability.extra.active==false then
+      if not G.GAME.blind.in_blind then
         card.ability.extra.active=true
         G.hand:change_size(card.ability.extra.bonus_hs)
         card:juice_up()
