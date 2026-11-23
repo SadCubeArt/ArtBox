@@ -22,7 +22,7 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.setting_blind then
-            local eval = function() return G.GAME.current_round.hands_played == 0 end
+            local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
             juice_card_until(card, eval, true)
         end
 

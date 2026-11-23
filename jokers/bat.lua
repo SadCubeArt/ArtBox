@@ -27,12 +27,7 @@ SMODS.Joker {
     if context.setting_blind then
       card.ability.extra.used = false
       local eval = function(_c) return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
-      G.E_MANAGER:add_event(Event({
-        func = function()
-          juice_card_until(card, eval, true)
-          return true;
-        end
-      }))
+      juice_card_until(card, eval, true)
     end
 
 
