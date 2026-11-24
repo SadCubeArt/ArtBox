@@ -195,3 +195,18 @@ SMODS.ConsumableType({
     default = 'c_artb_art_paper'
 })
 --#endregion
+
+--#region Custom Card Areas
+ArtBox.custom_card_areas = function(game)
+    game.artb_spearea_W = 4.9 * G.CARD_W
+    game.artb_spearea_H = 0.95 * G.CARD_H
+
+    game.artb_spearea = CardArea(
+        G.hand.T.x - 0.1,
+        -4,
+        game.artb_spearea_W,
+        game.artb_spearea_H,
+        { type = 'joker', }
+    )
+end
+--#endregion

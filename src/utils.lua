@@ -47,32 +47,39 @@ function ArtBox.create_collectable(key)
 end
 
 ArtBox.calculate = function(self, context)
-    if context.final_scoring_step and G.GAME.artb_spears_to_trigger > 0 then
+    if context.final_scoring_step and #G.artb_spearea.cards > 0 then
         local spear_effects = {}
-        for i = 1, G.GAME.artb_spears_to_trigger do
+        for i = 1, #G.artb_spearea.cards do
             spear_effects[#spear_effects + 1] = { xmult = 3 }
         end
-        G.GAME.artb_spears_to_trigger = 0
         return SMODS.merge_effects(spear_effects)
     end
 
-    if context.end_of_round and context.main_eval and G.GAME.artb_spears_sold > 0 then
-        for i = 1, G.GAME.artb_spears_sold do
-            if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-                G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+    if context.end_of_round and context.main_eval and #G.artb_spearea.cards > 0 then
+        for _, v in pairs(G.artb_spearea.cards) do
+            if #G.jokers.cards + (G.GAME.joker_buffer - v.ability.card_limit + v.ability.extra_slots_used) < G.jokers.config.card_limit then
+                G.GAME.joker_buffer = (G.GAME.joker_buffer + v.ability.card_limit + v.ability.extra_slots_used) + 1
                 G.E_MANAGER:add_event(Event({
                     delay = 0.2,
                     trigger = 'after',
                     func = function()
-                        local _c = SMODS.add_card { key = 'j_artb_spear' }
-                        _c:start_materialize()
+                        G.artb_spearea:remove_card(v)
+                        G.jokers:emplace(v)
+                        v:start_materialize()
+                        v:add_to_deck()
                         G.GAME.joker_buffer = 0
+                        return true;
+                    end
+                }))
+            else
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        v:remove()
                         return true;
                     end
                 }))
             end
         end
-        G.GAME.artb_spears_sold = 0
     end
 end
 
