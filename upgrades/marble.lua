@@ -57,10 +57,12 @@ SMODS.Enhancement({
 
   set_sprites = function(self, card, front)
     G.E_MANAGER:add_event(Event({
-        func = function()
-            card:set_sprite_state("progress" .. card.ability.extra.progress)
-            return true;
+      func = function()
+        if card.ability.extra.progress then
+          card:set_sprite_state("progress" .. card.ability.extra.progress)
         end
+        return true;
+      end
     }))
   end
 })
