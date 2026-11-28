@@ -6,7 +6,8 @@ SMODS.Joker {
             gain = 1
         }
     },
-    rarity = 1,
+    rarity = 2,
+    cost = 5,
     pos = { x = 0, y = 7 },
     atlas = 'joker_atlas',
     unlocked = true,
